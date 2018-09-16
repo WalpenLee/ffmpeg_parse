@@ -171,6 +171,7 @@ clean::
 	$(RM) $(HOSTPROGS) $(TESTPROGS) $(TOOLS)
 endef
 
-$(eval $(RULES))
+:
+	$(eval $(call RULES))
 
 -include $(wildcard $(OBJS:.o=.d) $(HOSTOBJS:.o=.d) $(TESTOBJS:.o=.d) $(HOBJS:.o=.d) $(SLIBOBJS:.o=.d)) $(OBJS:.o=$(DEFAULT_X86ASMD).d)
