@@ -59,3 +59,8 @@ http://blog.csdn.net/rOokieMonkey/article/details/78668888
 
 10,安装 
 输入命令：make install
+
+遇到的问题
+1.make: *** No rule to make target \`libavdevice/libavdevice.a', needed by \`all'.  Stop.
+
+ make-3.81-3-msys-1.0.13-bin.tar  make 升级一下
