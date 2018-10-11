@@ -64,3 +64,8 @@ http://blog.csdn.net/rOokieMonkey/article/details/78668888
 1.make: *** No rule to make target \`libavdevice/libavdevice.a', needed by \`all'.  Stop.
 
  make-3.81-3-msys-1.0.13-bin.tar  make 升级一下
+
+Git config --global core.autocrlf false
+#然后运行下面的命令删除ffmpeg代码，并重新获取一下即可
+git rm --cached -r .
+git reset --hard
