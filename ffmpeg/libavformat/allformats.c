@@ -538,14 +538,18 @@ static void av_format_init_next(void)
     AVOutputFormat *prevout = NULL, *out;
     AVInputFormat *previn = NULL, *in;
 
+	//¼ÓËø
     ff_mutex_lock(&avpriv_register_devices_mutex);
 
+	//½«ËùÓĞmuxer×é×°³ÉÁ´±í
     for (int i = 0; (out = (AVOutputFormat*)muxer_list[i]); i++) {
         if (prevout)
             prevout->next = out;
         prevout = out;
     }
 
+	//outdev_list ¿ª·¢Õß¿ÉÒÔ×Ô¼ºÉèÖÃ£¬ÓÃÀ´×Ô¶¨ÒåĞèÒªÄÄĞ©muxer
+	//µ½ÕâÀïÊ± prevout ÒÑ¾­ÊÇnullÁË
     if (outdev_list) {
         for (int i = 0; (out = (AVOutputFormat*)outdev_list[i]); i++) {
             if (prevout)
@@ -554,12 +558,14 @@ static void av_format_init_next(void)
         }
     }
 
+	//½«ËùÓĞdemuxer×é×°³ÉÁ´±í
     for (int i = 0; (in = (AVInputFormat*)demuxer_list[i]); i++) {
         if (previn)
             previn->next = in;
         previn = in;
     }
 
+	//indev_list ¿ª·¢Õß¿ÉÒÔ×Ô¼ºÉèÖÃ£¨avpriv_register_devices£©demuxer¡£
     if (indev_list) {
         for (int i = 0; (in = (AVInputFormat*)indev_list[i]); i++) {
             if (previn)
@@ -597,6 +603,8 @@ AVOutputFormat *av_oformat_next(const AVOutputFormat *f)
 
 void av_register_all(void)
 {
+	//±£Ö¤av_format_init_nextÖ»µ÷ÓÃÒ»´Îå 
+	//¿âº¯Êıpthread_once()ÊµÏÖÒ»´ÎĞÔ³õÊ¼»¯
     ff_thread_once(&av_format_next_init, av_format_init_next);
 }
 

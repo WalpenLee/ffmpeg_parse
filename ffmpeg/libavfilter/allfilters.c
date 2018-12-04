@@ -479,6 +479,7 @@ static void av_filter_init_next(void)
 {
     AVFilter *prev = NULL, *p;
     void *i = 0;
+	//将所有filter组成链表
     while ((p = (AVFilter*)av_filter_iterate(&i))) {
         if (prev)
             prev->next = p;

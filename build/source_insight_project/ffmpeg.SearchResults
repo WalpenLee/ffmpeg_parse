@@ -1,0 +1,1122 @@
+---- merge Matches (1121 in 171 files) ----
+Aacpsdsp_mips.c (libavcodec\mips):    /* merged 2 loops */
+Aacsbr_mips.h (libavcodec\mips):            /* 10 calls of function vector_fmul_add merged into one loop
+Ac3enc.c (libavcodec):                /* merge three delta in one code */
+Ac3enc.c (libavcodec):          avctx->audio_service_type == AV_AUDIO_SERVICE_TYPE_EMERGENCY  ||
+Adpcmenc.c (libavcodec):        // merge old paths to save memory
+Af_amerge.c (libavfilter):typedef struct AMergeContext {
+Af_amerge.c (libavfilter):    struct amerge_input {
+Af_amerge.c (libavfilter):} AMergeContext;
+Af_amerge.c (libavfilter):#define OFFSET(x) offsetof(AMergeContext, x)
+Af_amerge.c (libavfilter):static const AVOption amerge_options[] = {
+Af_amerge.c (libavfilter):AVFILTER_DEFINE_CLASS(amerge);
+Af_amerge.c (libavfilter):    AMergeContext *s = ctx->priv;
+Af_amerge.c (libavfilter):    AMergeContext *s = ctx->priv;
+Af_amerge.c (libavfilter):    AMergeContext *s = ctx->priv;
+Af_amerge.c (libavfilter):static inline void copy_samples(int nb_inputs, struct amerge_input in[],
+Af_amerge.c (libavfilter):    AMergeContext *s = ctx->priv;
+Af_amerge.c (libavfilter):    AMergeContext *s = ctx->priv;
+Af_amerge.c (libavfilter):static const AVFilterPad amerge_outputs[] = {
+Af_amerge.c (libavfilter):AVFilter ff_af_amerge = {
+Af_amerge.c (libavfilter):    .name          = "amerge",
+Af_amerge.c (libavfilter):    .description   = NULL_IF_CONFIG_SMALL("Merge two or more audio streams into "
+Af_amerge.c (libavfilter):    .priv_size     = sizeof(AMergeContext),
+Af_amerge.c (libavfilter):    .outputs       = amerge_outputs,
+Af_amerge.c (libavfilter):    .priv_class    = &amerge_class,
+Af_ashowinfo.c (libavfilter):    case AV_AUDIO_SERVICE_TYPE_EMERGENCY:         av_log(ctx, AV_LOG_INFO, "Emergency");          break;
+Allfilters.c (libavfilter):extern AVFilter ff_af_amerge;
+Allfilters.c (libavfilter):extern AVFilter ff_vf_alphamerge;
+Allfilters.c (libavfilter):extern AVFilter ff_vf_maskedmerge;
+Allfilters.c (libavfilter):extern AVFilter ff_vf_mergeplanes;
+Api-band-test.c (tests\api): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Api-codec-param-test.c (tests\api): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Api-flac-test.c (tests\api): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Api-h264-test.c (tests\api): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Api-seek-test.c (tests\api): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Api-threadmessage-test.c (tests\api): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Atrac3.c (libavcodec):    /* Merge the decoded spectrum and tonal components. */
+Avcodec-58.def (libavcodec):    av_packet_merge_side_data
+Avcodec.h (libavcodec):    AV_AUDIO_SERVICE_TYPE_EMERGENCY         = 6,
+Avcodec.h (libavcodec):#if FF_API_MERGE_SD_API
+Avcodec.h (libavcodec):int av_packet_merge_side_data(AVPacket *pkt);
+Avdct.h (libavcodec):     * Note, normally this can be merged with the zigzag/alternate scan<br>
+Avfiltergraph.c (libavfilter):static int can_merge_formats(AVFilterFormats *a_arg,
+Avfiltergraph.c (libavfilter):        ret = ff_merge_samplerates(a, b);
+Avfiltergraph.c (libavfilter):        ret = ff_merge_formats(a, b, type);
+Avfiltergraph.c (libavfilter): * @return  >=0 if all links formats lists could be queried and merged;
+Avfiltergraph.c (libavfilter):    int count_merged = 0;         /* successful merge of formats lists */
+Avfiltergraph.c (libavfilter):    int count_already_merged = 0; /* lists already merged */
+Avfiltergraph.c (libavfilter):    int count_delayed = 0;        /* lists that need to be merged later */
+Avfiltergraph.c (libavfilter):    /* go through and merge as many format lists as possible */
+Avfiltergraph.c (libavfilter):                if (!can_merge_formats(link->in_formats, link->out_formats,
+Avfiltergraph.c (libavfilter):                    if (!can_merge_formats(link->in_samplerates,
+Avfiltergraph.c (libavfilter):#define MERGE_DISPATCH(field, statement)                                     \
+Avfiltergraph.c (libavfilter):                count_already_merged++;                                      \
+Avfiltergraph.c (libavfilter):                count_merged++;                                              \
+Avfiltergraph.c (libavfilter):                MERGE_DISPATCH(channel_layouts,
+Avfiltergraph.c (libavfilter):                    if (!ff_merge_channel_layouts(link->in_channel_layouts,
+Avfiltergraph.c (libavfilter):                MERGE_DISPATCH(samplerates,
+Avfiltergraph.c (libavfilter):                    if (!ff_merge_samplerates(link->in_samplerates,
+Avfiltergraph.c (libavfilter):            MERGE_DISPATCH(formats,
+Avfiltergraph.c (libavfilter):                if (!ff_merge_formats(link->in_formats, link->out_formats,
+Avfiltergraph.c (libavfilter):#undef MERGE_DISPATCH
+Avfiltergraph.c (libavfilter):                /* couldn't merge format lists. auto-insert conversion filter */
+Avfiltergraph.c (libavfilter):                if (!ff_merge_formats( inlink->in_formats,  inlink->out_formats,  inlink->type) ||
+Avfiltergraph.c (libavfilter):                    !ff_merge_formats(outlink->in_formats, outlink->out_formats, outlink->type))
+Avfiltergraph.c (libavfilter):                    (!ff_merge_samplerates(inlink->in_samplerates,
+Avfiltergraph.c (libavfilter):                     !ff_merge_channel_layouts(inlink->in_channel_layouts,
+Avfiltergraph.c (libavfilter):                    (!ff_merge_samplerates(outlink->in_samplerates,
+Avfiltergraph.c (libavfilter):                     !ff_merge_channel_layouts(outlink->in_channel_layouts,
+Avfiltergraph.c (libavfilter):           "%d queried, %d merged, %d already done, %d delayed\n",
+Avfiltergraph.c (libavfilter):           count_queried, count_merged, count_already_merged, count_delayed);
+Avfiltergraph.c (libavfilter):           if count_merged > 0, one pair of formats lists at least was merged,
+Avfiltergraph.c (libavfilter):        if (count_queried || count_merged)
+Avfiltergraph.c (libavfilter):    /* find supported formats from sub-filters, and merge along links */
+Avfiltergraph.c (libavfilter):    /* Once everything is merged, it's possible that we'll still have
+Aviobuf.c (libavformat):        // consecutive header/trailer markers can be merged.
+Avio_dir_cmd.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Avio_reading.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Avpacket.c (libavcodec):#if FF_API_MERGE_SD_API
+Avpacket.c (libavcodec):#define FF_MERGE_MARKER 0x8c4d9d108e25e9feULL
+Avpacket.c (libavcodec):int av_packet_merge_side_data(AVPacket *pkt){
+Avpacket.c (libavcodec):        bytestream_put_be64(&p, FF_MERGE_MARKER);
+Avpacket.c (libavcodec):    if (!pkt->side_data_elems && pkt->size >12 && AV_RB64(pkt->data + pkt->size - 8) == FF_MERGE_MARKER){
+Bink.c (libavcodec): * Merge two consequent lists of equal size depending on bits read.
+Bink.c (libavcodec): * @param dst  buffer where merged list will be written to
+Bink.c (libavcodec):static void merge(GetBitContext *gb, uint8_t *dst, uint8_t *src, int size)
+Bink.c (libavcodec):                merge(gb, out + t, in + t, size);
+Blend.h (libavfilter):    BLEND_GRAINMERGE,
+Cbs_h265.h (libavcodec):    uint8_t log2_parallel_merge_level_minus2;
+Cbs_h265.h (libavcodec):    uint8_t five_minus_max_num_merge_cand;
+Cbs_h265_syntax_template.c (libavcodec):    ue(log2_parallel_merge_level_minus2,
+Cbs_h265_syntax_template.c (libavcodec):            ue(five_minus_max_num_merge_cand, 0, 4);
+Cfhd.c (libavcodec):/* TODO: merge with VLC tables or use LUT */
+Cfhd.h (libavcodec):    /* TODO: merge this into SubBand structure */
+Cinepakenc.c (libavcodec): * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Config.asm:%define CONFIG_AMERGE_FILTER 1
+Config.asm:%define CONFIG_ALPHAMERGE_FILTER 1
+Config.asm:%define CONFIG_MASKEDMERGE_FILTER 1
+Config.asm:%define CONFIG_MERGEPLANES_FILTER 1
+Config.h:#define CONFIG_AMERGE_FILTER 1
+Config.h:#define CONFIG_ALPHAMERGE_FILTER 1
+Config.h:#define CONFIG_MASKEDMERGE_FILTER 1
+Config.h:#define CONFIG_MERGEPLANES_FILTER 1
+Config.mak (ffbuild):CONFIG_AMERGE_FILTER=yes
+Config.mak (ffbuild):CONFIG_ALPHAMERGE_FILTER=yes
+Config.mak (ffbuild):CONFIG_MASKEDMERGE_FILTER=yes
+Config.mak (ffbuild):CONFIG_MERGEPLANES_FILTER=yes
+Decode_audio.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Decode_video.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Demuxing_decoding.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Dump.c (libavformat):    case AV_AUDIO_SERVICE_TYPE_EMERGENCY:
+Dump.c (libavformat):        av_log(ctx, AV_LOG_INFO, "emergency");
+Dxva2_hevc.c (libavcodec):    pp->log2_parallel_merge_level_minus2 = pps->log2_parallel_merge_level - 2;
+Ebur128.c (libavfilter): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Encode_audio.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Encode_video.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Extract_mvs.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Fdctdsp.c (libavcodec\ppc):#define MERGE_S16(hl, a, b) vec_merge ## hl(vs16(a), vs16(b))
+Fdctdsp.c (libavcodec\ppc):    b01 = ((vector float) MERGE_S16(h, b00, b40));
+Fdctdsp.c (libavcodec\ppc):    b11 = ((vector float) MERGE_S16(l, b00, b40));
+Fdctdsp.c (libavcodec\ppc):    b21 = ((vector float) MERGE_S16(h, b10, b50));
+Fdctdsp.c (libavcodec\ppc):    b31 = ((vector float) MERGE_S16(l, b10, b50));
+Fdctdsp.c (libavcodec\ppc):    b41 = ((vector float) MERGE_S16(h, b20, b60));
+Fdctdsp.c (libavcodec\ppc):    b51 = ((vector float) MERGE_S16(l, b20, b60));
+Fdctdsp.c (libavcodec\ppc):    b61 = ((vector float) MERGE_S16(h, b30, b70));
+Fdctdsp.c (libavcodec\ppc):    b71 = ((vector float) MERGE_S16(l, b30, b70));
+Fdctdsp.c (libavcodec\ppc):    x0 = ((vector float) MERGE_S16(h, b01, b41));
+Fdctdsp.c (libavcodec\ppc):    x1 = ((vector float) MERGE_S16(l, b01, b41));
+Fdctdsp.c (libavcodec\ppc):    x2 = ((vector float) MERGE_S16(h, b11, b51));
+Fdctdsp.c (libavcodec\ppc):    x3 = ((vector float) MERGE_S16(l, b11, b51));
+Fdctdsp.c (libavcodec\ppc):    x4 = ((vector float) MERGE_S16(h, b21, b61));
+Fdctdsp.c (libavcodec\ppc):    x5 = ((vector float) MERGE_S16(l, b21, b61));
+Fdctdsp.c (libavcodec\ppc):    x6 = ((vector float) MERGE_S16(h, b31, b71));
+Fdctdsp.c (libavcodec\ppc):    x7 = ((vector float) MERGE_S16(l, b31, b71));
+Fdctdsp.c (libavcodec\ppc):    b00 = ((vector float) MERGE_S16(h, x0, x4));
+Fdctdsp.c (libavcodec\ppc):    b10 = ((vector float) MERGE_S16(l, x0, x4));
+Fdctdsp.c (libavcodec\ppc):    b20 = ((vector float) MERGE_S16(h, x1, x5));
+Fdctdsp.c (libavcodec\ppc):    b30 = ((vector float) MERGE_S16(l, x1, x5));
+Fdctdsp.c (libavcodec\ppc):    b40 = ((vector float) MERGE_S16(h, x2, x6));
+Fdctdsp.c (libavcodec\ppc):    b50 = ((vector float) MERGE_S16(l, x2, x6));
+Fdctdsp.c (libavcodec\ppc):    b60 = ((vector float) MERGE_S16(h, x3, x7));
+Fdctdsp.c (libavcodec\ppc):    b70 = ((vector float) MERGE_S16(l, x3, x7));
+Fdctdsp.c (libavcodec\ppc):#undef MERGE_S16
+Fdctdsp.c (libavcodec\ppc):    x0 = vec_mergel(b00, b20);
+Fdctdsp.c (libavcodec\ppc):    x1 = vec_mergeh(b00, b20);
+Fdctdsp.c (libavcodec\ppc):    x2 = vec_mergel(b10, b30);
+Fdctdsp.c (libavcodec\ppc):    x3 = vec_mergeh(b10, b30);
+Fdctdsp.c (libavcodec\ppc):    b00 = vec_mergeh(x1, x3);
+Fdctdsp.c (libavcodec\ppc):    b10 = vec_mergel(x1, x3);
+Fdctdsp.c (libavcodec\ppc):    b20 = vec_mergeh(x0, x2);
+Fdctdsp.c (libavcodec\ppc):    b30 = vec_mergel(x0, x2);
+Fdctdsp.c (libavcodec\ppc):    x4 = vec_mergel(b41, b61);
+Fdctdsp.c (libavcodec\ppc):    x5 = vec_mergeh(b41, b61);
+Fdctdsp.c (libavcodec\ppc):    x6 = vec_mergel(b51, b71);
+Fdctdsp.c (libavcodec\ppc):    x7 = vec_mergeh(b51, b71);
+Fdctdsp.c (libavcodec\ppc):    b41 = vec_mergeh(x5, x7);
+Fdctdsp.c (libavcodec\ppc):    b51 = vec_mergel(x5, x7);
+Fdctdsp.c (libavcodec\ppc):    b61 = vec_mergeh(x4, x6);
+Fdctdsp.c (libavcodec\ppc):    b71 = vec_mergel(x4, x6);
+Fdctdsp.c (libavcodec\ppc):    x0 = vec_mergel(b01, b21);
+Fdctdsp.c (libavcodec\ppc):    x1 = vec_mergeh(b01, b21);
+Fdctdsp.c (libavcodec\ppc):    x2 = vec_mergel(b11, b31);
+Fdctdsp.c (libavcodec\ppc):    x3 = vec_mergeh(b11, b31);
+Fdctdsp.c (libavcodec\ppc):    x4 = vec_mergel(b40, b60);
+Fdctdsp.c (libavcodec\ppc):    x5 = vec_mergeh(b40, b60);
+Fdctdsp.c (libavcodec\ppc):    x6 = vec_mergel(b50, b70);
+Fdctdsp.c (libavcodec\ppc):    x7 = vec_mergeh(b50, b70);
+Fdctdsp.c (libavcodec\ppc):    b40 = vec_mergeh(x1, x3);
+Fdctdsp.c (libavcodec\ppc):    b50 = vec_mergel(x1, x3);
+Fdctdsp.c (libavcodec\ppc):    b60 = vec_mergeh(x0, x2);
+Fdctdsp.c (libavcodec\ppc):    b70 = vec_mergel(x0, x2);
+Fdctdsp.c (libavcodec\ppc):    b01 = vec_mergeh(x5, x7);
+Fdctdsp.c (libavcodec\ppc):    b11 = vec_mergel(x5, x7);
+Fdctdsp.c (libavcodec\ppc):    b21 = vec_mergeh(x4, x6);
+Fdctdsp.c (libavcodec\ppc):    b31 = vec_mergel(x4, x6);
+Ffplay.c (fftools):    /* Reorder the filters to ensure that inputs of the custom filters are merged first */
+Filter-audio.mak (tests\fate):FATE_AFILTER-$(call FILTERDEMDECENCMUX, AMERGE, WAV, PCM_S16LE, PCM_S16LE, WAV) += fate-filter-amerge
+Filter-audio.mak (tests\fate):fate-filter-amerge: tests/data/asynth-44100-1.wav
+Filter-audio.mak (tests\fate):fate-filter-amerge: SRC = $(TARGET_PATH)/tests/data/asynth-44100-1.wav
+Filter-audio.mak (tests\fate):fate-filter-amerge: CMD = framecrc -i $(SRC) -i $(SRC) -filter_complex "[0:a][1:a]amerge=inputs=2[aout]" -map "[aout]"
+Filter-video.mak (tests\fate):FATE_FILTER_VSYNTH-$(CONFIG_MERGEPLANES_FILTER) += fate-filter-mergeplanes
+Filter-video.mak (tests\fate):fate-filter-mergeplanes: tests/data/filtergraphs/mergeplanes
+Filter-video.mak (tests\fate):fate-filter-mergeplanes: CMD = framecrc -c:v pgmyuv -i $(SRC) -c:v pgmyuv -i $(SRC) -filter_complex_script $(TARGET_PATH)/tests/data/filtergraphs/mergeplanes
+Filter-video.mak (tests\fate):FATE_FILTER_VSYNTH-$(call ALLYES, FORMAT_FILTER SPLIT_FILTER ALPHAEXTRACT_FILTER ALPHAMERGE_FILTER) += fate-filter-alphaextract_alphamerge_rgb
+Filter-video.mak (tests\fate):fate-filter-alphaextract_alphamerge_rgb: tests/data/filtergraphs/alphamerge_alphaextract_rgb
+Filter-video.mak (tests\fate):fate-filter-alphaextract_alphamerge_rgb: CMD = framecrc -c:v pgmyuv -i $(SRC) -filter_complex_script $(TARGET_PATH)/tests/data/filtergraphs/alphamerge_alphaextract_rgb
+Filter-video.mak (tests\fate):FATE_FILTER_VSYNTH-$(call ALLYES, FORMAT_FILTER SPLIT_FILTER ALPHAEXTRACT_FILTER ALPHAMERGE_FILTER) += fate-filter-alphaextract_alphamerge_yuv
+Filter-video.mak (tests\fate):fate-filter-alphaextract_alphamerge_yuv: tests/data/filtergraphs/alphamerge_alphaextract_yuv
+Filter-video.mak (tests\fate):fate-filter-alphaextract_alphamerge_yuv: CMD = framecrc -c:v pgmyuv -i $(SRC) -filter_complex_script $(TARGET_PATH)/tests/data/filtergraphs/alphamerge_alphaextract_yuv
+Filter-video.mak (tests\fate):FATE_FILTER_PIXFMTS-$(CONFIG_TINTERLACE_FILTER) += fate-filter-pixfmts-tinterlace_merge
+Filter-video.mak (tests\fate):fate-filter-pixfmts-tinterlace_merge: CMD = pixfmts "merge"
+Filtering_audio.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Filtering_video.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Filter_list.c (libavfilter):    &ff_af_amerge,
+Filter_list.c (libavfilter):    &ff_vf_alphamerge,
+Filter_list.c (libavfilter):    &ff_vf_maskedmerge,
+Filter_list.c (libavfilter):    &ff_vf_mergeplanes,
+Float_dsp_altivec.c (libavutil\ppc):        l0 = vec_mergel(s1, s1);               // [c,c,d,d]
+Float_dsp_altivec.c (libavutil\ppc):        h0 = vec_mergeh(s1, s1);               // [a,a,b,b]
+Float_dsp_altivec.c (libavutil\ppc):        s1 = vec_mergeh(vec_mergel(l0, h0),    // [d,b,d,b]
+Float_dsp_altivec.c (libavutil\ppc):                        vec_mergeh(l0, h0));   // [c,a,c,a]
+Float_dsp_altivec.c (libavutil\ppc):        l0 = vec_mergel(s3, s3);
+Float_dsp_altivec.c (libavutil\ppc):        h0 = vec_mergeh(s3, s3);
+Float_dsp_altivec.c (libavutil\ppc):        s3 = vec_mergeh(vec_mergel(l0, h0),
+Float_dsp_altivec.c (libavutil\ppc):                        vec_mergeh(l0, h0));
+Float_dsp_vsx.c (libavutil\ppc):        l0 = vec_mergel(s1, s1);               // [c,c,d,d]
+Float_dsp_vsx.c (libavutil\ppc):        h0 = vec_mergeh(s1, s1);               // [a,a,b,b]
+Float_dsp_vsx.c (libavutil\ppc):        s1 = vec_mergeh(vec_mergel(l0, h0),    // [d,b,d,b]
+Float_dsp_vsx.c (libavutil\ppc):                        vec_mergeh(l0, h0));   // [c,a,c,a]
+Float_dsp_vsx.c (libavutil\ppc):        l0 = vec_mergel(s3, s3);
+Float_dsp_vsx.c (libavutil\ppc):        h0 = vec_mergeh(s3, s3);
+Float_dsp_vsx.c (libavutil\ppc):        s3 = vec_mergeh(vec_mergel(l0, h0),
+Float_dsp_vsx.c (libavutil\ppc):                        vec_mergeh(l0, h0));
+Formats.c (libavfilter):#define MERGE_REF(ret, a, fmts, type, fail)                                \
+Formats.c (libavfilter):#define MERGE_FORMATS(ret, a, b, fmts, nb, type, fail)                          \
+Formats.c (libavfilter):    MERGE_REF(ret, a, fmts, type, fail);                                        \
+Formats.c (libavfilter):    MERGE_REF(ret, b, fmts, type, fail);                                        \
+Formats.c (libavfilter):AVFilterFormats *ff_merge_formats(AVFilterFormats *a, AVFilterFormats *b,
+Formats.c (libavfilter):    // If chroma or alpha can be lost through merging then do not merge
+Formats.c (libavfilter):    MERGE_FORMATS(ret, a, b, formats, nb_formats, AVFilterFormats, fail);
+Formats.c (libavfilter):AVFilterFormats *ff_merge_samplerates(AVFilterFormats *a,
+Formats.c (libavfilter):        MERGE_FORMATS(ret, a, b, formats, nb_formats, AVFilterFormats, fail);
+Formats.c (libavfilter):        MERGE_REF(a, b, formats, AVFilterFormats, fail);
+Formats.c (libavfilter):        MERGE_REF(b, a, formats, AVFilterFormats, fail);
+Formats.c (libavfilter):AVFilterChannelLayouts *ff_merge_channel_layouts(AVFilterChannelLayouts *a,
+Formats.c (libavfilter):               another merge. */
+Formats.c (libavfilter):        MERGE_REF(b, a, channel_layouts, AVFilterChannelLayouts, fail);
+Formats.c (libavfilter):    MERGE_REF(ret, a, channel_layouts, AVFilterChannelLayouts, fail);
+Formats.c (libavfilter):    MERGE_REF(ret, b, channel_layouts, AVFilterChannelLayouts, fail);
+Formats.h (libavfilter): * negotiated over a link, the input and output lists are merged to form a
+Formats.h (libavfilter): * Otherwise, the lists are merged, and all other links which reference
+Formats.h (libavfilter): * either of the format lists involved in the merge are also affected.
+Formats.h (libavfilter): * First, the first link's lists are merged, yielding:
+Formats.h (libavfilter): * Next, the lists for the second link are merged, yielding:
+Formats.h (libavfilter): * Unfortunately, when the format lists at the two ends of a link are merged,
+Formats.h (libavfilter): * we must ensure that all links which reference either pre-merge format list
+Formats.h (libavfilter):AVFilterChannelLayouts *ff_merge_channel_layouts(AVFilterChannelLayouts *a,
+Formats.h (libavfilter):AVFilterFormats *ff_merge_samplerates(AVFilterFormats *a,
+Formats.h (libavfilter):AVFilterFormats *ff_merge_formats(AVFilterFormats *a, AVFilterFormats *b,
+F_ebur128.c (libavfilter):            // TODO: merge both filters in one?
+Gsmdec_template.c (libavcodec):    // for optimal speed this could be merged with short_term_synth,
+H264chroma_template.c (libavcodec\ppc):        vsrc2ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc2uc);\
+H264chroma_template.c (libavcodec\ppc):        vsrc3ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc3uc);\
+H264chroma_template.c (libavcodec\ppc):        vsrc0ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc0uc);\
+H264chroma_template.c (libavcodec\ppc):        vsrc1ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc1uc);\
+H264chroma_template.c (libavcodec\ppc):    vsrc0ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc0uc);
+H264chroma_template.c (libavcodec\ppc):    vsrc1ssH = (vec_s16)VEC_MERGEH(zero_u8v,(vec_u8)vsrc1uc);
+H264chroma_template.c (libavcodec\ppc):    vsrc0ssH = (vec_s16)VEC_MERGEH(zero_u8v, (vec_u8)vsrc0uc);
+H264chroma_template.c (libavcodec\ppc):    vsrc1ssH = (vec_s16)VEC_MERGEH(zero_u8v, (vec_u8)vsrc1uc);
+H264dsp.c (libavcodec\ppc):    b0 = vec_mergeh( a0, a0 ); \
+H264dsp.c (libavcodec\ppc):    b1 = vec_mergeh( a1, a0 ); \
+H264dsp.c (libavcodec\ppc):    b2 = vec_mergeh( a2, a0 ); \
+H264dsp.c (libavcodec\ppc):    b3 = vec_mergeh( a3, a0 ); \
+H264dsp.c (libavcodec\ppc):    a0 = vec_mergeh( b0, b2 ); \
+H264dsp.c (libavcodec\ppc):    a1 = vec_mergel( b0, b2 ); \
+H264dsp.c (libavcodec\ppc):    a2 = vec_mergeh( b1, b3 ); \
+H264dsp.c (libavcodec\ppc):    a3 = vec_mergel( b1, b3 ); \
+H264dsp.c (libavcodec\ppc):    b0 = vec_mergeh( a0, a2 ); \
+H264dsp.c (libavcodec\ppc):    b1 = vec_mergel( a0, a2 ); \
+H264dsp.c (libavcodec\ppc):    b2 = vec_mergeh( a1, a3 ); \
+H264dsp.c (libavcodec\ppc):    b3 = vec_mergel( a1, a3 )
+H264dsp.c (libavcodec\ppc):    vdst_ss = (vec_s16) VEC_MERGEH(zero_u8v, vdst);           \
+H264dsp.c (libavcodec\ppc):    vec_u16 dst16 = (vec_u16)VEC_MERGEH(zero_u8v, dstv);   \
+H264dsp.c (libavcodec\ppc):    r4 = vec_mergeh(r0, r2);  /*0, 2 set 0*/ \
+H264dsp.c (libavcodec\ppc):    r5 = vec_mergel(r0, r2);  /*0, 2 set 1*/ \
+H264dsp.c (libavcodec\ppc):    r6 = vec_mergeh(r1, r3);  /*1, 3 set 0*/ \
+H264dsp.c (libavcodec\ppc):    r7 = vec_mergel(r1, r3);  /*1, 3 set 1*/ \
+H264dsp.c (libavcodec\ppc):    r0 = vec_mergeh(r4, r6);  /*all set 0*/  \
+H264dsp.c (libavcodec\ppc):    r1 = vec_mergel(r4, r6);  /*all set 1*/  \
+H264dsp.c (libavcodec\ppc):    r2 = vec_mergeh(r5, r7);  /*all set 2*/  \
+H264dsp.c (libavcodec\ppc):    r3 = vec_mergel(r5, r7);  /*all set 3*/  \
+H264dsp.c (libavcodec\ppc):    /*Merge first pairs*/                                                  \
+H264dsp.c (libavcodec\ppc):    r0 = vec_mergeh(r0, r8);    /*0, 8*/                                   \
+H264dsp.c (libavcodec\ppc):    r1 = vec_mergeh(r1, r9);    /*1, 9*/                                   \
+H264dsp.c (libavcodec\ppc):    r2 = vec_mergeh(r2, r10);   /*2,10*/                                   \
+H264dsp.c (libavcodec\ppc):    r3 = vec_mergeh(r3, r11);   /*3,11*/                                   \
+H264dsp.c (libavcodec\ppc):    r4 = vec_mergeh(r4, r12);   /*4,12*/                                   \
+H264dsp.c (libavcodec\ppc):    r5 = vec_mergeh(r5, r13);   /*5,13*/                                   \
+H264dsp.c (libavcodec\ppc):    r6 = vec_mergeh(r6, r14);   /*6,14*/                                   \
+H264dsp.c (libavcodec\ppc):    r7 = vec_mergeh(r7, r15);   /*7,15*/                                   \
+H264dsp.c (libavcodec\ppc):    /*Merge second pairs*/                                                 \
+H264dsp.c (libavcodec\ppc):    r8  = vec_mergeh(r0, r4);   /*0,4, 8,12 set 0*/                        \
+H264dsp.c (libavcodec\ppc):    r9  = vec_mergel(r0, r4);   /*0,4, 8,12 set 1*/                        \
+H264dsp.c (libavcodec\ppc):    r10 = vec_mergeh(r1, r5);   /*1,5, 9,13 set 0*/                        \
+H264dsp.c (libavcodec\ppc):    r11 = vec_mergel(r1, r5);   /*1,5, 9,13 set 1*/                        \
+H264dsp.c (libavcodec\ppc):    r12 = vec_mergeh(r2, r6);   /*2,6,10,14 set 0*/                        \
+H264dsp.c (libavcodec\ppc):    r13 = vec_mergel(r2, r6);   /*2,6,10,14 set 1*/                        \
+H264dsp.c (libavcodec\ppc):    r14 = vec_mergeh(r3, r7);   /*3,7,11,15 set 0*/                        \
+H264dsp.c (libavcodec\ppc):    r15 = vec_mergel(r3, r7);   /*3,7,11,15 set 1*/                        \
+H264dsp.c (libavcodec\ppc):    /*Third merge*/                                                        \
+H264dsp.c (libavcodec\ppc):    r0 = vec_mergeh(r8,  r12);  /*0,2,4,6,8,10,12,14 set 0*/               \
+H264dsp.c (libavcodec\ppc):    r1 = vec_mergel(r8,  r12);  /*0,2,4,6,8,10,12,14 set 1*/               \
+H264dsp.c (libavcodec\ppc):    r2 = vec_mergeh(r9,  r13);  /*0,2,4,6,8,10,12,14 set 2*/               \
+H264dsp.c (libavcodec\ppc):    r4 = vec_mergeh(r10, r14);  /*1,3,5,7,9,11,13,15 set 0*/               \
+H264dsp.c (libavcodec\ppc):    r5 = vec_mergel(r10, r14);  /*1,3,5,7,9,11,13,15 set 1*/               \
+H264dsp.c (libavcodec\ppc):    r6 = vec_mergeh(r11, r15);  /*1,3,5,7,9,11,13,15 set 2*/               \
+H264dsp.c (libavcodec\ppc):    /*Final merge*/                                                        \
+H264dsp.c (libavcodec\ppc):    r8  = vec_mergeh(r0, r4);   /*all set 0*/                              \
+H264dsp.c (libavcodec\ppc):    r9  = vec_mergel(r0, r4);   /*all set 1*/                              \
+H264dsp.c (libavcodec\ppc):    r10 = vec_mergeh(r1, r5);   /*all set 2*/                              \
+H264dsp.c (libavcodec\ppc):    r11 = vec_mergel(r1, r5);   /*all set 3*/                              \
+H264dsp.c (libavcodec\ppc):    r12 = vec_mergeh(r2, r6);   /*all set 4*/                              \
+H264dsp.c (libavcodec\ppc):    r13 = vec_mergel(r2, r6);   /*all set 5*/                              \
+H264dsp.c (libavcodec\ppc):    tc0vec = vec_mergeh(tc0vec, tc0vec);                                                     \
+H264dsp.c (libavcodec\ppc):    tc0vec = vec_mergeh(tc0vec, tc0vec);                                                     \
+H264dsp.c (libavcodec\ppc):        v0 = (vec_s16)VEC_MERGEH(zero_u8v, vblock);
+H264dsp.c (libavcodec\ppc):        v1 = (vec_s16)VEC_MERGEL(zero_u8v, vblock);
+H264dsp.c (libavcodec\ppc):        v0 = (vec_s16)VEC_MERGEH(zero_u8v, vdst);
+H264dsp.c (libavcodec\ppc):        v1 = (vec_s16)VEC_MERGEL(zero_u8v, vdst);
+H264dsp.c (libavcodec\ppc):        v2 = (vec_s16)VEC_MERGEH(zero_u8v, vsrc);
+H264dsp.c (libavcodec\ppc):        v3 = (vec_s16)VEC_MERGEL(zero_u8v, vsrc);
+H264qpel_template.c (libavcodec\ppc):        srcP0A = (vec_s16) VEC_MERGEH(zero_u8v, srcP0);
+H264qpel_template.c (libavcodec\ppc):        srcP0B = (vec_s16) VEC_MERGEL(zero_u8v, srcP0);
+H264qpel_template.c (libavcodec\ppc):        srcP1A = (vec_s16) VEC_MERGEH(zero_u8v, srcP1);
+H264qpel_template.c (libavcodec\ppc):        srcP1B = (vec_s16) VEC_MERGEL(zero_u8v, srcP1);
+H264qpel_template.c (libavcodec\ppc):        srcP2A = (vec_s16) VEC_MERGEH(zero_u8v, srcP2);
+H264qpel_template.c (libavcodec\ppc):        srcP2B = (vec_s16) VEC_MERGEL(zero_u8v, srcP2);
+H264qpel_template.c (libavcodec\ppc):        srcP3A = (vec_s16) VEC_MERGEH(zero_u8v, srcP3);
+H264qpel_template.c (libavcodec\ppc):        srcP3B = (vec_s16) VEC_MERGEL(zero_u8v, srcP3);
+H264qpel_template.c (libavcodec\ppc):        srcM1A = (vec_s16) VEC_MERGEH(zero_u8v, srcM1);
+H264qpel_template.c (libavcodec\ppc):        srcM1B = (vec_s16) VEC_MERGEL(zero_u8v, srcM1);
+H264qpel_template.c (libavcodec\ppc):        srcM2A = (vec_s16) VEC_MERGEH(zero_u8v, srcM2);
+H264qpel_template.c (libavcodec\ppc):        srcM2B = (vec_s16) VEC_MERGEL(zero_u8v, srcM2);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcM2ssA = (vec_s16) VEC_MERGEH(zero_u8v, srcM2);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcM2ssB = (vec_s16) VEC_MERGEL(zero_u8v, srcM2);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcM1ssA = (vec_s16) VEC_MERGEH(zero_u8v, srcM1);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcM1ssB = (vec_s16) VEC_MERGEL(zero_u8v, srcM1);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcP0ssA = (vec_s16) VEC_MERGEH(zero_u8v, srcP0);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcP0ssB = (vec_s16) VEC_MERGEL(zero_u8v, srcP0);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcP1ssA = (vec_s16) VEC_MERGEH(zero_u8v, srcP1);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcP1ssB = (vec_s16) VEC_MERGEL(zero_u8v, srcP1);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcP2ssA = (vec_s16) VEC_MERGEH(zero_u8v, srcP2);
+H264qpel_template.c (libavcodec\ppc):    vec_s16 srcP2ssB = (vec_s16) VEC_MERGEL(zero_u8v, srcP2);
+H264qpel_template.c (libavcodec\ppc):        srcP3ssA = (vec_s16) VEC_MERGEH(zero_u8v, srcP3);
+H264qpel_template.c (libavcodec\ppc):        srcP3ssB = (vec_s16) VEC_MERGEL(zero_u8v, srcP3);
+H264qpel_template.c (libavcodec\ppc):        srcP0A = (vec_s16) VEC_MERGEH(zero_u8v, srcP0);
+H264qpel_template.c (libavcodec\ppc):        srcP0B = (vec_s16) VEC_MERGEL(zero_u8v, srcP0);
+H264qpel_template.c (libavcodec\ppc):        srcP1A = (vec_s16) VEC_MERGEH(zero_u8v, srcP1);
+H264qpel_template.c (libavcodec\ppc):        srcP1B = (vec_s16) VEC_MERGEL(zero_u8v, srcP1);
+H264qpel_template.c (libavcodec\ppc):        srcP2A = (vec_s16) VEC_MERGEH(zero_u8v, srcP2);
+H264qpel_template.c (libavcodec\ppc):        srcP2B = (vec_s16) VEC_MERGEL(zero_u8v, srcP2);
+H264qpel_template.c (libavcodec\ppc):        srcP3A = (vec_s16) VEC_MERGEH(zero_u8v, srcP3);
+H264qpel_template.c (libavcodec\ppc):        srcP3B = (vec_s16) VEC_MERGEL(zero_u8v, srcP3);
+H264qpel_template.c (libavcodec\ppc):        srcM1A = (vec_s16) VEC_MERGEH(zero_u8v, srcM1);
+H264qpel_template.c (libavcodec\ppc):        srcM1B = (vec_s16) VEC_MERGEL(zero_u8v, srcM1);
+H264qpel_template.c (libavcodec\ppc):        srcM2A = (vec_s16) VEC_MERGEH(zero_u8v, srcM2);
+H264qpel_template.c (libavcodec\ppc):        srcM2B = (vec_s16) VEC_MERGEL(zero_u8v, srcM2);
+H264_cabac.c (libavcodec):    if (FRAME_MBAFF(h)) { //FIXME merge with the stuff in fill_caches?
+H264_slice.c (libavcodec):     * and is merged by the SEI parsing code. */
+Hevc.mak (tests\fate):    MERGE_A_TI_3                \
+Hevc.mak (tests\fate):    MERGE_B_TI_3                \
+Hevc.mak (tests\fate):    MERGE_C_TI_3                \
+Hevc.mak (tests\fate):    MERGE_D_TI_3                \
+Hevc.mak (tests\fate):    MERGE_E_TI_3                \
+Hevc.mak (tests\fate):    MERGE_F_MTK_4               \
+Hevc.mak (tests\fate):    MERGE_G_HHI_4               \
+Hevc.mak (tests\fate):    PMERGE_A_TI_3               \
+Hevc.mak (tests\fate):    PMERGE_B_TI_3               \
+Hevc.mak (tests\fate):    PMERGE_C_TI_3               \
+Hevc.mak (tests\fate):    PMERGE_D_TI_3               \
+Hevc.mak (tests\fate):    PMERGE_E_TI_3               \
+Hevcdec.c (libavcodec):            sh->max_num_merge_cand = 5 - get_ue_golomb_long(gb);
+Hevcdec.c (libavcodec):            if (sh->max_num_merge_cand < 1 || sh->max_num_merge_cand > 5) {
+Hevcdec.c (libavcodec):                       sh->max_num_merge_cand);
+Hevcdec.c (libavcodec):    if (!sao_merge_up_flag && !sao_merge_left_flag)     \
+Hevcdec.c (libavcodec):    else if (sao_merge_left_flag)                       \
+Hevcdec.c (libavcodec):    else if (sao_merge_up_flag)                         \
+Hevcdec.c (libavcodec):    int sao_merge_left_flag = 0;
+Hevcdec.c (libavcodec):    int sao_merge_up_flag   = 0;
+Hevcdec.c (libavcodec):                sao_merge_left_flag = ff_hevc_sao_merge_flag_decode(s);
+Hevcdec.c (libavcodec):        if (ry > 0 && !sao_merge_left_flag) {
+Hevcdec.c (libavcodec):                sao_merge_up_flag = ff_hevc_sao_merge_flag_decode(s);
+Hevcdec.c (libavcodec):                                  int merge_idx, MvField *mv)
+Hevcdec.c (libavcodec):                                 part_idx, merge_idx, mv, mvp_flag, 0);
+Hevcdec.c (libavcodec):                                 part_idx, merge_idx, mv, mvp_flag, 1);
+Hevcdec.c (libavcodec):    int merge_idx = 0;
+Hevcdec.c (libavcodec):        lc->pu.merge_flag = ff_hevc_merge_flag_decode(s);
+Hevcdec.c (libavcodec):    if (skip_flag || lc->pu.merge_flag) {
+Hevcdec.c (libavcodec):        if (s->sh.max_num_merge_cand > 1)
+Hevcdec.c (libavcodec):            merge_idx = ff_hevc_merge_idx_decode(s);
+Hevcdec.c (libavcodec):            merge_idx = 0;
+Hevcdec.c (libavcodec):        ff_hevc_luma_mv_merge_mode(s, x0, y0, nPbW, nPbH, log2_cb_size,
+Hevcdec.c (libavcodec):                                   partIdx, merge_idx, &current_mv);
+Hevcdec.c (libavcodec):                              partIdx, merge_idx, &current_mv);
+Hevcdec.c (libavcodec):                !(lc->cu.part_mode == PART_2Nx2N && lc->pu.merge_flag)) {
+Hevcdec.h (libavcodec):    SAO_MERGE_FLAG = 0,
+Hevcdec.h (libavcodec):    MERGE_FLAG,
+Hevcdec.h (libavcodec):    MERGE_IDX,
+Hevcdec.h (libavcodec):    uint8_t merge_flag;
+Hevcdec.h (libavcodec):int ff_hevc_sao_merge_flag_decode(HEVCContext *s);
+Hevcdec.h (libavcodec):int ff_hevc_merge_idx_decode(HEVCContext *s);
+Hevcdec.h (libavcodec):int ff_hevc_merge_flag_decode(HEVCContext *s);
+Hevcdec.h (libavcodec):void ff_hevc_luma_mv_merge_mode(HEVCContext *s, int x0, int y0,
+Hevcdec.h (libavcodec):                                int part_idx, int merge_idx, MvField *mv);
+Hevcdec.h (libavcodec):                              int part_idx, int merge_idx,
+Hevcdsp.c (libavcodec\ppc):    src_13 = vec_mergel(src_01, src_23);
+Hevcdsp.c (libavcodec\ppc):    src_02 = vec_mergeh(src_01, src_23);
+Hevc_cabac.c (libavcodec):     1, // sao_merge_flag
+Hevc_cabac.c (libavcodec):     1, // merge_flag
+Hevc_cabac.c (libavcodec):     1, // merge_idx
+Hevc_cabac.c (libavcodec):    0, // sao_merge_flag
+Hevc_cabac.c (libavcodec):    20, // merge_flag
+Hevc_cabac.c (libavcodec):    21, // merge_idx
+Hevc_cabac.c (libavcodec):    { // sao_merge_flag
+Hevc_cabac.c (libavcodec):      // merge_flag
+Hevc_cabac.c (libavcodec):      // merge_idx
+Hevc_cabac.c (libavcodec):    { // sao_merge_flag
+Hevc_cabac.c (libavcodec):      // merge_flag
+Hevc_cabac.c (libavcodec):      // merge_idx
+Hevc_cabac.c (libavcodec):    { // sao_merge_flag
+Hevc_cabac.c (libavcodec):      // merge_flag
+Hevc_cabac.c (libavcodec):      // merge_idx
+Hevc_cabac.c (libavcodec):int ff_hevc_sao_merge_flag_decode(HEVCContext *s)
+Hevc_cabac.c (libavcodec):    return GET_CABAC(elem_offset[SAO_MERGE_FLAG]);
+Hevc_cabac.c (libavcodec):int ff_hevc_merge_idx_decode(HEVCContext *s)
+Hevc_cabac.c (libavcodec):    int i = GET_CABAC(elem_offset[MERGE_IDX]);
+Hevc_cabac.c (libavcodec):        while (i < s->sh.max_num_merge_cand-1 && get_cabac_bypass(&s->HEVClc->cc))
+Hevc_cabac.c (libavcodec):int ff_hevc_merge_flag_decode(HEVCContext *s)
+Hevc_cabac.c (libavcodec):    return GET_CABAC(elem_offset[MERGE_FLAG]);
+Hevc_mvs.c (libavcodec):    uint8_t plevel = s->ps.pps->log2_parallel_merge_level;
+Hevc_mvs.c (libavcodec):static void derive_spatial_merge_candidates(HEVCContext *s, int x0, int y0,
+Hevc_mvs.c (libavcodec):                                            int merge_idx,
+Hevc_mvs.c (libavcodec):                                            struct MvField mergecandlist[])
+Hevc_mvs.c (libavcodec):    int nb_merge_cand = 0;
+Hevc_mvs.c (libavcodec):    int nb_orig_merge_cand = 0;
+Hevc_mvs.c (libavcodec):            mergecandlist[nb_merge_cand] = TAB_MVF_PU(A1);
+Hevc_mvs.c (libavcodec):            if (merge_idx == 0)
+Hevc_mvs.c (libavcodec):            nb_merge_cand++;
+Hevc_mvs.c (libavcodec):            mergecandlist[nb_merge_cand] = TAB_MVF_PU(B1);
+Hevc_mvs.c (libavcodec):            if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):            nb_merge_cand++;
+Hevc_mvs.c (libavcodec):    // above right spatial merge candidate
+Hevc_mvs.c (libavcodec):        mergecandlist[nb_merge_cand] = TAB_MVF_PU(B0);
+Hevc_mvs.c (libavcodec):        if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):        nb_merge_cand++;
+Hevc_mvs.c (libavcodec):    // left bottom spatial merge candidate
+Hevc_mvs.c (libavcodec):        mergecandlist[nb_merge_cand] = TAB_MVF_PU(A0);
+Hevc_mvs.c (libavcodec):        if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):        nb_merge_cand++;
+Hevc_mvs.c (libavcodec):    // above left spatial merge candidate
+Hevc_mvs.c (libavcodec):        nb_merge_cand != 4) {
+Hevc_mvs.c (libavcodec):        mergecandlist[nb_merge_cand] = TAB_MVF_PU(B2);
+Hevc_mvs.c (libavcodec):        if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):        nb_merge_cand++;
+Hevc_mvs.c (libavcodec):        nb_merge_cand < s->sh.max_num_merge_cand) {
+Hevc_mvs.c (libavcodec):            mergecandlist[nb_merge_cand].pred_flag = available_l0 + (available_l1 << 1);
+Hevc_mvs.c (libavcodec):            AV_ZERO16(mergecandlist[nb_merge_cand].ref_idx);
+Hevc_mvs.c (libavcodec):            mergecandlist[nb_merge_cand].mv[0]      = mv_l0_col;
+Hevc_mvs.c (libavcodec):            mergecandlist[nb_merge_cand].mv[1]      = mv_l1_col;
+Hevc_mvs.c (libavcodec):            if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):            nb_merge_cand++;
+Hevc_mvs.c (libavcodec):    nb_orig_merge_cand = nb_merge_cand;
+Hevc_mvs.c (libavcodec):    // combined bi-predictive merge candidates  (applies for B slices)
+Hevc_mvs.c (libavcodec):    if (s->sh.slice_type == HEVC_SLICE_B && nb_orig_merge_cand > 1 &&
+Hevc_mvs.c (libavcodec):        nb_orig_merge_cand < s->sh.max_num_merge_cand) {
+Hevc_mvs.c (libavcodec):        for (comb_idx = 0; nb_merge_cand < s->sh.max_num_merge_cand &&
+Hevc_mvs.c (libavcodec):                           comb_idx < nb_orig_merge_cand * (nb_orig_merge_cand - 1); comb_idx++) {
+Hevc_mvs.c (libavcodec):            MvField l0_cand = mergecandlist[l0_cand_idx];
+Hevc_mvs.c (libavcodec):            MvField l1_cand = mergecandlist[l1_cand_idx];
+Hevc_mvs.c (libavcodec):                mergecandlist[nb_merge_cand].ref_idx[0]   = l0_cand.ref_idx[0];
+Hevc_mvs.c (libavcodec):                mergecandlist[nb_merge_cand].ref_idx[1]   = l1_cand.ref_idx[1];
+Hevc_mvs.c (libavcodec):                mergecandlist[nb_merge_cand].pred_flag    = PF_BI;
+Hevc_mvs.c (libavcodec):                AV_COPY32(&mergecandlist[nb_merge_cand].mv[0], &l0_cand.mv[0]);
+Hevc_mvs.c (libavcodec):                AV_COPY32(&mergecandlist[nb_merge_cand].mv[1], &l1_cand.mv[1]);
+Hevc_mvs.c (libavcodec):                if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):                nb_merge_cand++;
+Hevc_mvs.c (libavcodec):    while (nb_merge_cand < s->sh.max_num_merge_cand) {
+Hevc_mvs.c (libavcodec):        mergecandlist[nb_merge_cand].pred_flag    = PF_L0 + ((s->sh.slice_type == HEVC_SLICE_B) << 1);
+Hevc_mvs.c (libavcodec):        AV_ZERO32(mergecandlist[nb_merge_cand].mv + 0);
+Hevc_mvs.c (libavcodec):        AV_ZERO32(mergecandlist[nb_merge_cand].mv + 1);
+Hevc_mvs.c (libavcodec):        mergecandlist[nb_merge_cand].ref_idx[0]   = zero_idx < nb_refs ? zero_idx : 0;
+Hevc_mvs.c (libavcodec):        mergecandlist[nb_merge_cand].ref_idx[1]   = zero_idx < nb_refs ? zero_idx : 0;
+Hevc_mvs.c (libavcodec):        if (merge_idx == nb_merge_cand)
+Hevc_mvs.c (libavcodec):        nb_merge_cand++;
+Hevc_mvs.c (libavcodec): * 8.5.3.1.1 Derivation process of luma Mvs for merge mode
+Hevc_mvs.c (libavcodec):void ff_hevc_luma_mv_merge_mode(HEVCContext *s, int x0, int y0, int nPbW,
+Hevc_mvs.c (libavcodec):                                int merge_idx, MvField *mv)
+Hevc_mvs.c (libavcodec):    MvField mergecand_list[MRG_MAX_NUM_CANDS];
+Hevc_mvs.c (libavcodec):    if (s->ps.pps->log2_parallel_merge_level > 2 && nCS == 8) {
+Hevc_mvs.c (libavcodec):    derive_spatial_merge_candidates(s, x0, y0, nPbW, nPbH, log2_cb_size,
+Hevc_mvs.c (libavcodec):                                    merge_idx, mergecand_list);
+Hevc_mvs.c (libavcodec):    if (mergecand_list[merge_idx].pred_flag == PF_BI &&
+Hevc_mvs.c (libavcodec):        mergecand_list[merge_idx].pred_flag = PF_L0;
+Hevc_mvs.c (libavcodec):    *mv = mergecand_list[merge_idx];
+Hevc_mvs.c (libavcodec):                              int merge_idx, MvField *mv,
+Hevc_mvs.c (libavcodec):    //left spatial merge candidate
+Hevc_mvs.c (libavcodec):    // above right spatial merge candidate
+Hevc_mvs.c (libavcodec):    // above spatial merge candidate
+Hevc_mvs.c (libavcodec):    // above left spatial merge candidate
+Hevc_mvs.c (libavcodec):    // above right spatial merge candidate
+Hevc_mvs.c (libavcodec):    // above spatial merge candidate
+Hevc_mvs.c (libavcodec):    // above left spatial merge candidate
+Hevc_ps.c (libavcodec):    unsigned log2_parallel_merge_level_minus2;
+Hevc_ps.c (libavcodec):    log2_parallel_merge_level_minus2     = get_ue_golomb_long(gb);
+Hevc_ps.c (libavcodec):    if (log2_parallel_merge_level_minus2 > sps->log2_ctb_size) {
+Hevc_ps.c (libavcodec):        av_log(avctx, AV_LOG_ERROR, "log2_parallel_merge_level_minus2 out of range: %d\n",
+Hevc_ps.c (libavcodec):               log2_parallel_merge_level_minus2);
+Hevc_ps.c (libavcodec):    pps->log2_parallel_merge_level       = log2_parallel_merge_level_minus2 + 2;
+Hevc_ps.h (libavcodec):    unsigned int max_num_merge_cand; ///< 5 - 5_minus_max_num_merge_cand
+Hevc_ps.h (libavcodec):    int log2_parallel_merge_level; ///< log2_parallel_merge_level_minus2 + 2
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv3 = VEC_MERGEL(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv4 = VEC_MERGEL(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv3 = VEC_MERGEL(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv4 = VEC_MERGEL(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv3 = VEC_MERGEL(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv4 = VEC_MERGEL(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv3 = VEC_MERGEL(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv4 = VEC_MERGEL(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):    pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv1 = VEC_MERGEH(vczero, pixelsv1);
+Hpeldsp_altivec.c (libavcodec\ppc):        pixelsv2 = VEC_MERGEH(vczero, pixelsv2);
+Http_multiclient.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Huffman.c (libavcodec):            // merge the two smallest entries, and put it back in the heap
+Hw_decode.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Id3v2.c (libavformat):static void merge_date(AVDictionary **m)
+Id3v2.c (libavformat):    merge_date(metadata);
+Idctdsp.c (libavcodec\ppc):    vx0 = vec_mergeh(vy0, vy4);                                             \
+Idctdsp.c (libavcodec\ppc):    vx1 = vec_mergel(vy0, vy4);                                             \
+Idctdsp.c (libavcodec\ppc):    vx2 = vec_mergeh(vy1, vy5);                                             \
+Idctdsp.c (libavcodec\ppc):    vx3 = vec_mergel(vy1, vy5);                                             \
+Idctdsp.c (libavcodec\ppc):    vx4 = vec_mergeh(vy2, vy6);                                             \
+Idctdsp.c (libavcodec\ppc):    vx5 = vec_mergel(vy2, vy6);                                             \
+Idctdsp.c (libavcodec\ppc):    vx6 = vec_mergeh(vy3, vy7);                                             \
+Idctdsp.c (libavcodec\ppc):    vx7 = vec_mergel(vy3, vy7);                                             \
+Idctdsp.c (libavcodec\ppc):    vy0 = vec_mergeh(vx0, vx4);                                             \
+Idctdsp.c (libavcodec\ppc):    vy1 = vec_mergel(vx0, vx4);                                             \
+Idctdsp.c (libavcodec\ppc):    vy2 = vec_mergeh(vx1, vx5);                                             \
+Idctdsp.c (libavcodec\ppc):    vy3 = vec_mergel(vx1, vx5);                                             \
+Idctdsp.c (libavcodec\ppc):    vy4 = vec_mergeh(vx2, vx6);                                             \
+Idctdsp.c (libavcodec\ppc):    vy5 = vec_mergel(vx2, vx6);                                             \
+Idctdsp.c (libavcodec\ppc):    vy6 = vec_mergeh(vx3, vx7);                                             \
+Idctdsp.c (libavcodec\ppc):    vy7 = vec_mergel(vx3, vx7);                                             \
+Idctdsp.c (libavcodec\ppc):    vx0 = vec_adds(vec_mergeh(vy0, vy4), bias);                             \
+Idctdsp.c (libavcodec\ppc):    vx1 = vec_mergel(vy0, vy4);                                             \
+Idctdsp.c (libavcodec\ppc):    vx2 = vec_mergeh(vy1, vy5);                                             \
+Idctdsp.c (libavcodec\ppc):    vx3 = vec_mergel(vy1, vy5);                                             \
+Idctdsp.c (libavcodec\ppc):    vx4 = vec_mergeh(vy2, vy6);                                             \
+Idctdsp.c (libavcodec\ppc):    vx5 = vec_mergel(vy2, vy6);                                             \
+Idctdsp.c (libavcodec\ppc):    vx6 = vec_mergeh(vy3, vy7);                                             \
+Idctdsp.c (libavcodec\ppc):    vx7 = vec_mergel(vy3, vy7);                                             \
+Idctdsp.c (libavcodec\ppc):    perm0 = vec_mergeh(p, p0);
+Idctdsp.c (libavcodec\ppc):    perm1 = vec_mergeh(p, p1);
+Idctdsp.c (libavcodec\ppc):    tmp2 = (vec_s16) vec_mergeh(tmp, (vec_u8) zero)
+Idctdsp.h (libavcodec):     * Note, normally this can be merged with the zigzag/alternate scan<br>
+Intrax8.c (libavcodec):// FIXME maybe merge with ff_*
+Ivi.c (libavcodec):            /* merge them and convert into signed val */
+Jacosubdec.c (libavformat):    int merge_line = 0;
+Jacosubdec.c (libavformat):        if (merge_line || timed_line(p)) {
+Jacosubdec.c (libavformat):            sub = ff_subtitles_queue_insert(&jacosub->q, line, len, merge_line);
+Jacosubdec.c (libavformat):            merge_line = len > 1 && !strcmp(&line[len - 2], "\\\n");
+Libav-merge.txt (doc):The FFmpeg project merges all the changes from the Libav project
+Libav-merge.txt (doc):issues, the changes are merged on a more or less regular schedule (daily for
+Libav-merge.txt (doc):A different approach to the merge could have been to pick the changes we are
+Libav-merge.txt (doc):their work. This leads us to create merge commits for every single one from
+Libav-merge.txt (doc):our history (and the conflict are solved in the merge one). That way, not a
+Libav-merge.txt (doc):- It causes a non negligible merge commits pollution. We make sure there are
+Libav-merge.txt (doc):  not several level of merges entangled (we do a 1:1 merge/commit), but it's
+Libav-merge.txt (doc):  these merges, so we have even less time to work on things we personally care
+Libav-merge.txt (doc):- There is a growing technical risk factor with the merges due to the codebase
+Libav-merge.txt (doc):MERGE GUIDELINES
+Libav-merge.txt (doc):Before starting, you can reduce the risk of errors on merge conflicts by using
+Libav-merge.txt (doc):a different merge conflict style:
+Libav-merge.txt (doc):    $ git config --global merge.conflictstyle diff3
+Libav-merge.txt (doc):tools/libav-merge-next-commit is a script to help merging the next commit in
+Libav-merge.txt (doc):the queue. It assumes a remote named libav. It has two modes: merge, and noop.
+Libav-merge.txt (doc):The noop mode creates a merge with no change to the HEAD. You can pass a hash
+Libav-merge.txt (doc):TODO/FIXME/UNMERGED
+Libav-merge.txt (doc):- Merge proresenc_anatoliy.c and proresenc_kostya.c
+Magicyuvenc.c (libavcodec):typedef struct PackageMergerList {
+Magicyuvenc.c (libavcodec):} PackageMergerList;
+Magicyuvenc.c (libavcodec):    PackageMergerList list_a, list_b, *to = &list_a, *from = &list_b, *temp;
+Maskedmerge.h (libavfilter):#ifndef AVFILTER_MASKEDMERGE_H
+Maskedmerge.h (libavfilter):#define AVFILTER_MASKEDMERGE_H
+Maskedmerge.h (libavfilter):typedef struct MaskedMergeContext {
+Maskedmerge.h (libavfilter):    void (*maskedmerge)(const uint8_t *bsrc, const uint8_t *osrc,
+Maskedmerge.h (libavfilter):} MaskedMergeContext;
+Maskedmerge.h (libavfilter):void ff_maskedmerge_init_x86(MaskedMergeContext *s);
+Maskedmerge.h (libavfilter):#endif /* AVFILTER_MASKEDMERGE_H */
+Metadata.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Me_cmp.c (libavcodec\ppc):        (vector unsigned short) VEC_MERGEH(zero, pix2v);
+Me_cmp.c (libavcodec\ppc):        (vector unsigned short) VEC_MERGEL(zero, pix2v);
+Me_cmp.c (libavcodec\ppc):        (vector unsigned short) VEC_MERGEH(zero, pix2iv);
+Me_cmp.c (libavcodec\ppc):        (vector unsigned short) VEC_MERGEL(zero, pix2iv);
+Me_cmp.c (libavcodec\ppc):        pix3hv  = (vector unsigned short) VEC_MERGEH(zero, pix3v);
+Me_cmp.c (libavcodec\ppc):        pix3lv  = (vector unsigned short) VEC_MERGEL(zero, pix3v);
+Me_cmp.c (libavcodec\ppc):        pix3ihv = (vector unsigned short) VEC_MERGEH(zero, pix3iv);
+Me_cmp.c (libavcodec\ppc):        pix3ilv = (vector unsigned short) VEC_MERGEL(zero, pix3iv);
+Me_cmp.c (libavcodec\ppc):            (vector signed short) VEC_MERGEH((vector signed char) vzero,    \
+Me_cmp.c (libavcodec\ppc):            (vector signed short) VEC_MERGEH((vector signed char) vzero,    \
+Me_cmp.c (libavcodec\ppc):            (vector signed short) VEC_MERGEH((vector signed char) vzero,    \
+Me_cmp.c (libavcodec\ppc):            (vector signed short) VEC_MERGEH((vector signed char) vzero,    \
+Me_cmp.c (libavcodec\ppc):            (vector signed short) VEC_MERGEL((vector signed char) vzero,    \
+Me_cmp.c (libavcodec\ppc):            (vector signed short) VEC_MERGEL((vector signed char) vzero,    \
+Mjpegenc_huffman.c (libavcodec): * Uses package merge algorithm as follows:
+Mjpegenc_huffman.c (libavcodec): * 3. merge the 2 symbols of least score and put them in list(i+1), and remove them from list(i). The new score will be the sum of the 2 scores
+Mjpegenc_huffman.c (libavcodec):    PackageMergerList list_a, list_b, *to = &list_a, *from = &list_b, *temp;
+Mjpegenc_huffman.h (libavcodec):// Uses the package merge algorithm to compute the Huffman table.
+Mjpegenc_huffman.h (libavcodec): * Used to store intermediate lists in the package merge algorithm
+Mjpegenc_huffman.h (libavcodec):typedef struct PackageMergerList {
+Mjpegenc_huffman.h (libavcodec):} PackageMergerList;
+Motion_est_template.c (libavcodec)://try to merge with above FIXME (needs PSNR test)
+Mpeg12dec.c (libavcodec):                    // FIXME: merge with the stuff in mpeg_decode_slice
+Mpeg4video.h (libavcodec):void ff_mpeg4_merge_partitions(MpegEncContext *s);
+Mpeg4videoenc.c (libavcodec):            put_bits(&s->pb, 1, cbp ? 0 : 1);  /* modb2 */ // FIXME merge
+Mpeg4videoenc.c (libavcodec):void ff_mpeg4_merge_partitions(MpegEncContext *s)
+Mpegaudiodsp_template.c (libavcodec):            //merge last stage of imdct into the window coefficients
+Mpegts.c (libavformat):    int merge_pmt_versions;
+Mpegts.c (libavformat):    {"merge_pmt_versions", "re-use streams when PMT's version/pids change", offsetof(MpegTSContext, merge_pmt_versions), AV_OPT_TYPE_BOOL,
+Mpegts.c (libavformat):    int merged_st;
+Mpegts.c (libavformat):        if (!pes->st || pes->merged_st) {
+Mpegts.c (libavformat):                        if (ts->merge_pmt_versions)
+Mpegts.c (libavformat):                            goto skip; /* wait for PMT to merge new stream */
+Mpegts.c (libavformat):        if (ts->merge_pmt_versions)
+Mpegts.c (libavformat):            if (ts->merge_pmt_versions && !pes->st) {
+Mpegts.c (libavformat):                    pes->merged_st = 1;
+Mpegts.c (libavformat):            if (ts->merge_pmt_versions && pes && !pes->st) {
+Mpegts.c (libavformat):                    pes->merged_st = 1;
+Mpegts.c (libavformat):            if (ts->merge_pmt_versions && !st) {
+Mpegts.mak (tests\fate):FATE_MPEGTS_PROBE-$(call DEMDEC, MPEGTS) += fate-mpegts-probe-pmt-merge
+Mpegts.mak (tests\fate):fate-mpegts-probe-pmt-merge: SRC = $(TARGET_SAMPLES)/mpegts/pmtchange.ts
+Mpegts.mak (tests\fate):fate-mpegts-probe-pmt-merge: CMD = run $(PROBE_CODEC_NAME_COMMAND) -merge_pmt_versions 1 -i "$(SRC)"
+Mpegvideodsp.c (libavcodec\ppc):    srcvA = vec_mergeh(vczero, srcvA);
+Mpegvideodsp.c (libavcodec\ppc):    srcvB = vec_mergeh(vczero, srcvB);
+Mpegvideodsp.c (libavcodec\ppc):        srcvC = vec_mergeh(vczero, srcvC);
+Mpegvideodsp.c (libavcodec\ppc):        srcvD = vec_mergeh(vczero, srcvD);
+Mpegvideo_enc.c (libavcodec):            ff_mpeg4_merge_partitions(s);
+Mpegvideo_enc.c (libavcodec):#define MERGE(field) dst->field += src->field; src->field=0
+Mpegvideo_enc.c (libavcodec):static void merge_context_after_me(MpegEncContext *dst, MpegEncContext *src){
+Mpegvideo_enc.c (libavcodec):    MERGE(me.scene_change_score);
+Mpegvideo_enc.c (libavcodec):    MERGE(me.mc_mb_var_sum_temp);
+Mpegvideo_enc.c (libavcodec):    MERGE(me.mb_var_sum_temp);
+Mpegvideo_enc.c (libavcodec):static void merge_context_after_encode(MpegEncContext *dst, MpegEncContext *src){
+Mpegvideo_enc.c (libavcodec):    MERGE(dct_count[0]); //note, the other dct vars are not part of the context
+Mpegvideo_enc.c (libavcodec):    MERGE(dct_count[1]);
+Mpegvideo_enc.c (libavcodec):    MERGE(mv_bits);
+Mpegvideo_enc.c (libavcodec):    MERGE(i_tex_bits);
+Mpegvideo_enc.c (libavcodec):    MERGE(p_tex_bits);
+Mpegvideo_enc.c (libavcodec):    MERGE(i_count);
+Mpegvideo_enc.c (libavcodec):    MERGE(f_count);
+Mpegvideo_enc.c (libavcodec):    MERGE(b_count);
+Mpegvideo_enc.c (libavcodec):    MERGE(skip_count);
+Mpegvideo_enc.c (libavcodec):    MERGE(misc_bits);
+Mpegvideo_enc.c (libavcodec):    MERGE(er.error_count);
+Mpegvideo_enc.c (libavcodec):    MERGE(padding_bug_score);
+Mpegvideo_enc.c (libavcodec):    MERGE(current_picture.encoding_error[0]);
+Mpegvideo_enc.c (libavcodec):    MERGE(current_picture.encoding_error[1]);
+Mpegvideo_enc.c (libavcodec):    MERGE(current_picture.encoding_error[2]);
+Mpegvideo_enc.c (libavcodec):            MERGE(dct_error_sum[0][i]);
+Mpegvideo_enc.c (libavcodec):            MERGE(dct_error_sum[1][i]);
+Mpegvideo_enc.c (libavcodec):        merge_context_after_me(s, s->thread_context[i]);
+Mpegvideo_enc.c (libavcodec):        merge_context_after_encode(s, s->thread_context[i]);
+Mux.c (libavformat)://FIXME merge with compute_pkt_fields
+Muxing.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Nellymoser.c (libavcodec): * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Nellymoser.h (libavcodec): * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Nellymoserdec.c (libavcodec): * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Nvdec_hevc.c (libavcodec):            .log2_parallel_merge_level_minus2             = pps->log2_parallel_merge_level - 2,
+Oggdec.c (libavformat):    modify, merge, publish, distribute, sublicense, and/or sell copies
+Oggdec.h (libavformat):    modify, merge, publish, distribute, sublicense, and/or sell copies
+Oggparseogm.c (libavformat):    modify, merge, publish, distribute, sublicense, and/or sell copies
+Oggparsespeex.c (libavformat):      modify, merge, publish, distribute, sublicense, and/or sell copies
+Oggparsetheora.c (libavformat): *    modify, merge, publish, distribute, sublicense, and/or sell copies
+Oggparsevorbis.c (libavformat): * modify, merge, publish, distribute, sublicense, and/or sell copies
+Options_table.h (libavcodec):{"em", "Emergency",          0, AV_OPT_TYPE_CONST, {.i64 = AV_AUDIO_SERVICE_TYPE_EMERGENCY },         INT_MIN, INT_MAX, A|E, "audio_service_type"},
+Opus_pvq.c (libavcodec):static inline void celt_stereo_merge(float *X, float *Y, float mid, int N)
+Opus_pvq.c (libavcodec):            celt_stereo_merge(X, Y, mid, N);
+Opus_pvq_search.asm (libavcodec\x86):; Merge parallel maximums round 8 (4 vs 4)
+Opus_pvq_search.asm (libavcodec\x86):; Merge parallel maximums round 4 (2 vs 2)
+Opus_pvq_search.asm (libavcodec\x86):; Merge parallel maximums final round (1 vs 1)
+Pixblockdsp.c (libavcodec\ppc):        vec_s16 shorts = (vec_s16)vec_mergeh(zero, bytes);
+Pixblockdsp.c (libavcodec\ppc):    shorts1 = (vector signed short) vec_mergeh(bytes, zero);
+Pixblockdsp.c (libavcodec\ppc):    shorts2 = (vector signed short) vec_mergeh(bytes, zero);
+Pixblockdsp.c (libavcodec\ppc):    shorts1 = (vector signed short) vec_mergeh(bytes, zero);
+Pixblockdsp.c (libavcodec\ppc):    shorts2 = (vector signed short) vec_mergeh(bytes, zero);
+Pixblockdsp.c (libavcodec\ppc):        shorts1 = (vec_s16)vec_mergeh(zero, bytes);
+Pixblockdsp.c (libavcodec\ppc):        shorts2 = (vec_s16)vec_mergeh(zero, bytes);
+Pixblockdsp.c (libavcodec\ppc):        shorts1 = (vec_s16)vec_mergeh(zero, bytes);
+Pixblockdsp.c (libavcodec\ppc):        shorts2 = (vec_s16)vec_mergeh(zero, bytes);
+Postprocess_altivec_template.c (libpostproc):        tempA1 = vec_mergeh (src_a, src_e);                       \
+Postprocess_altivec_template.c (libpostproc):        tempB1 = vec_mergel (src_a, src_e);                       \
+Postprocess_altivec_template.c (libpostproc):        tempC1 = vec_mergeh (src_b, src_f);                       \
+Postprocess_altivec_template.c (libpostproc):        tempD1 = vec_mergel (src_b, src_f);                       \
+Postprocess_altivec_template.c (libpostproc):        tempE1 = vec_mergeh (src_c, src_g);                       \
+Postprocess_altivec_template.c (libpostproc):        tempF1 = vec_mergel (src_c, src_g);                       \
+Postprocess_altivec_template.c (libpostproc):        tempG1 = vec_mergeh (src_d, src_h);                       \
+Postprocess_altivec_template.c (libpostproc):        tempH1 = vec_mergel (src_d, src_h);                       \
+Postprocess_altivec_template.c (libpostproc):        tempA2 = vec_mergeh (tempA1, tempE1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempB2 = vec_mergel (tempA1, tempE1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempC2 = vec_mergeh (tempB1, tempF1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempD2 = vec_mergel (tempB1, tempF1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempE2 = vec_mergeh (tempC1, tempG1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempF2 = vec_mergel (tempC1, tempG1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempG2 = vec_mergeh (tempD1, tempH1);                     \
+Postprocess_altivec_template.c (libpostproc):        tempH2 = vec_mergel (tempD1, tempH1);                     \
+Postprocess_altivec_template.c (libpostproc):        src_a = vec_mergeh (tempA2, tempE2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_b = vec_mergel (tempA2, tempE2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_c = vec_mergeh (tempB2, tempF2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_d = vec_mergel (tempB2, tempF2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_e = vec_mergeh (tempC2, tempG2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_f = vec_mergel (tempC2, tempG2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_g = vec_mergeh (tempD2, tempH2);                      \
+Postprocess_altivec_template.c (libpostproc):        src_h = vec_mergel (tempD2, tempH2);                      \
+Postprocess_altivec_template.c (libpostproc):        (vector signed short)vec_mergeh((vector signed char)zero,       \
+Postprocess_altivec_template.c (libpostproc):        (vector signed short)vec_mergeh((vector signed char)zero,       \
+Postprocess_altivec_template.c (libpostproc):        (vector signed short)vec_mergeh((vector unsigned char)zero,     \
+Postprocess_altivec_template.c (libpostproc):        (vector signed short)vec_mergeh((vector signed char)zero,       \
+Postprocess_altivec_template.c (libpostproc):        (vector signed short)vec_mergeh((vector unsigned char)zero,     \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_8h  = vec_mergeh(s_6, s_6);   \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_8l  = vec_mergel(s_6, s_6);   \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_9h  = vec_mergeh(s_9, s_9);   \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_9l  = vec_mergel(s_9, s_9);   \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_10h = vec_mergeh(s_10, s_10); \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_10l = vec_mergel(s_10, s_10); \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_11h = vec_mergeh(s_11, s_11); \
+Postprocess_altivec_template.c (libpostproc):    const vector unsigned char s_11l = vec_mergel(s_11, s_11); \
+Postprocess_altivec_template.c (libpostproc):            (vector unsigned short)vec_mergeh(cmp, cmp);                \
+Postprocess_altivec_template.c (libpostproc):            (vector unsigned short)vec_mergel(cmp, cmp);                \
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sump02 = vec_mergel(sum0, sum2);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sump13 = vec_mergel(sum1, sum3);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sumA = vec_mergel(sump02, sump13);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sump46 = vec_mergel(sum4, sum6);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sump57 = vec_mergel(sum5, sum7);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sumB = vec_mergel(sump46, sump57);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sump8A = vec_mergel(sum8, zero);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sump9B = vec_mergel(sum9, zero);
+Postprocess_altivec_template.c (libpostproc):    const vector signed int sumC = vec_mergel(sump8A, sump9B);
+Postprocess_altivec_template.c (libpostproc):        (vector signed short)vec_mergeh((vector signed char)zero,       \
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempA = vec_mergeh(src0, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempB = vec_mergel(src0, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempC = vec_mergeh(src1, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempD = vec_mergel(src1, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempE = vec_mergeh(src2, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempF = vec_mergel(src2, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempG = vec_mergeh(src3, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempH = vec_mergel(src3, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempI = vec_mergeh(src4, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempJ = vec_mergel(src4, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempK = vec_mergeh(src5, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempL = vec_mergel(src5, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempM = vec_mergeh(src6, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempN = vec_mergel(src6, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempO = vec_mergeh(src7, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempP = vec_mergel(src7, zero);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp0  = vec_mergeh(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp1  = vec_mergel(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp2  = vec_mergeh(tempB, tempJ);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp3  = vec_mergel(tempB, tempJ);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp4  = vec_mergeh(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp5  = vec_mergel(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp6  = vec_mergeh(tempD, tempL);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp7  = vec_mergel(tempD, tempL);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp8  = vec_mergeh(tempE, tempM);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp9  = vec_mergel(tempE, tempM);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp10 = vec_mergeh(tempF, tempN);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp11 = vec_mergel(tempF, tempN);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp12 = vec_mergeh(tempG, tempO);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp13 = vec_mergel(tempG, tempO);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp14 = vec_mergeh(tempH, tempP);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp15 = vec_mergel(tempH, tempP);
+Postprocess_altivec_template.c (libpostproc):    tempA = vec_mergeh(temp0, temp8);
+Postprocess_altivec_template.c (libpostproc):    tempB = vec_mergel(temp0, temp8);
+Postprocess_altivec_template.c (libpostproc):    tempC = vec_mergeh(temp1, temp9);
+Postprocess_altivec_template.c (libpostproc):    tempD = vec_mergel(temp1, temp9);
+Postprocess_altivec_template.c (libpostproc):    tempE = vec_mergeh(temp2, temp10);
+Postprocess_altivec_template.c (libpostproc):    tempF = vec_mergel(temp2, temp10);
+Postprocess_altivec_template.c (libpostproc):    tempG = vec_mergeh(temp3, temp11);
+Postprocess_altivec_template.c (libpostproc):    tempH = vec_mergel(temp3, temp11);
+Postprocess_altivec_template.c (libpostproc):    tempI = vec_mergeh(temp4, temp12);
+Postprocess_altivec_template.c (libpostproc):    tempJ = vec_mergel(temp4, temp12);
+Postprocess_altivec_template.c (libpostproc):    tempK = vec_mergeh(temp5, temp13);
+Postprocess_altivec_template.c (libpostproc):    tempL = vec_mergel(temp5, temp13);
+Postprocess_altivec_template.c (libpostproc):    tempM = vec_mergeh(temp6, temp14);
+Postprocess_altivec_template.c (libpostproc):    tempN = vec_mergel(temp6, temp14);
+Postprocess_altivec_template.c (libpostproc):    tempO = vec_mergeh(temp7, temp15);
+Postprocess_altivec_template.c (libpostproc):    tempP = vec_mergel(temp7, temp15);
+Postprocess_altivec_template.c (libpostproc):    temp0  = vec_mergeh(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    temp1  = vec_mergel(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    temp2  = vec_mergeh(tempB, tempJ);
+Postprocess_altivec_template.c (libpostproc):    temp3  = vec_mergel(tempB, tempJ);
+Postprocess_altivec_template.c (libpostproc):    temp4  = vec_mergeh(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    temp5  = vec_mergel(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    temp6  = vec_mergeh(tempD, tempL);
+Postprocess_altivec_template.c (libpostproc):    temp7  = vec_mergel(tempD, tempL);
+Postprocess_altivec_template.c (libpostproc):    temp8  = vec_mergeh(tempE, tempM);
+Postprocess_altivec_template.c (libpostproc):    temp9  = vec_mergel(tempE, tempM);
+Postprocess_altivec_template.c (libpostproc):    temp10 = vec_mergeh(tempF, tempN);
+Postprocess_altivec_template.c (libpostproc):    temp11 = vec_mergel(tempF, tempN);
+Postprocess_altivec_template.c (libpostproc):    temp12 = vec_mergeh(tempG, tempO);
+Postprocess_altivec_template.c (libpostproc):    temp13 = vec_mergel(tempG, tempO);
+Postprocess_altivec_template.c (libpostproc):    temp14 = vec_mergeh(tempH, tempP);
+Postprocess_altivec_template.c (libpostproc):    temp15 = vec_mergel(tempH, tempP);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempA = vec_mergeh(src0, src8);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempC = vec_mergeh(src1, src9);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempE = vec_mergeh(src2, src10);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempG = vec_mergeh(src3, src11);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempI = vec_mergeh(src4, src12);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempK = vec_mergeh(src5, src13);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempM = vec_mergeh(src6, src14);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char tempO = vec_mergeh(src7, src15);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp0 = vec_mergeh(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp1 = vec_mergel(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp4 = vec_mergeh(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp5 = vec_mergel(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp8 = vec_mergeh(tempE, tempM);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp9 = vec_mergel(tempE, tempM);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp12 = vec_mergeh(tempG, tempO);
+Postprocess_altivec_template.c (libpostproc):    vector unsigned char temp13 = vec_mergel(tempG, tempO);
+Postprocess_altivec_template.c (libpostproc):    tempA = vec_mergeh(temp0, temp8);
+Postprocess_altivec_template.c (libpostproc):    tempB = vec_mergel(temp0, temp8);
+Postprocess_altivec_template.c (libpostproc):    tempC = vec_mergeh(temp1, temp9);
+Postprocess_altivec_template.c (libpostproc):    tempD = vec_mergel(temp1, temp9);
+Postprocess_altivec_template.c (libpostproc):    tempI = vec_mergeh(temp4, temp12);
+Postprocess_altivec_template.c (libpostproc):    tempJ = vec_mergel(temp4, temp12);
+Postprocess_altivec_template.c (libpostproc):    tempK = vec_mergeh(temp5, temp13);
+Postprocess_altivec_template.c (libpostproc):    tempL = vec_mergel(temp5, temp13);
+Postprocess_altivec_template.c (libpostproc):    temp0 = vec_mergeh(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    temp1 = vec_mergel(tempA, tempI);
+Postprocess_altivec_template.c (libpostproc):    temp2 = vec_mergeh(tempB, tempJ);
+Postprocess_altivec_template.c (libpostproc):    temp3 = vec_mergel(tempB, tempJ);
+Postprocess_altivec_template.c (libpostproc):    temp4 = vec_mergeh(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    temp5 = vec_mergel(tempC, tempK);
+Postprocess_altivec_template.c (libpostproc):    temp6 = vec_mergeh(tempD, tempL);
+Postprocess_altivec_template.c (libpostproc):    temp7 = vec_mergel(tempD, tempL);
+Qsort.h (libavutil): * Merge sort, this sort requires a temporary buffer and is stable, its worst
+Qsvdec.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Ratecontrol.c (libavcodec):        float temp_cplx = sqrt(pic->mc_mb_var[mb_xy]); // FIXME merge in pow()
+Raw.c (libavcodec):    { AV_PIX_FMT_UYVY422, MKTAG('A', 'V', 'U', 'I') }, /* FIXME merge both fields */
+Rdt.c (libavformat):     * starts with a '#'. Multiple conditions are merged between brackets,
+Realtextdec.c (libavformat):            /* if we just read a <time> tag, introduce a new event, otherwise merge
+Realtextdec.c (libavformat):            int merge = !av_strncasecmp(buf.str, "<time", 5) ? 0 : 1;
+Realtextdec.c (libavformat):            sub = ff_subtitles_queue_insert(&rt->q, buf.str, buf.len, merge);
+Realtextdec.c (libavformat):            if (!merge) {
+Remuxing.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Resampling_audio.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Rmdec.c (libavformat):    AVPacket pkt;      ///< place to store merged video frame / reordered audio data
+Scaling_video.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Snow.h (libavcodec):    uint8_t level; //FIXME merge into type?
+Snow.h (libavcodec):    if(src_x<0){ //FIXME merge with prev & always round internal width up to *16
+Snowenc.c (libavcodec):        return 2*(1 + av_log2(2*FFABS(dmx)) //FIXME kill the 2* can be merged in lambda
+Snowenc.c (libavcodec):        int merged= same_block(b,b+1) && same_block(b,b+b_stride) && same_block(b,b+b_stride+1);
+Snowenc.c (libavcodec):        if(merged)
+Snowenc.c (libavcodec):        for(i=merged?4:0; i<9; i++){
+Style.min.css (doc):to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Subtitles.c (libavformat):                                    const uint8_t *event, size_t len, int merge)
+Subtitles.c (libavformat):    if (merge && q->nb_subs > 0) {
+Subtitles.c (libavformat):        /* merge with previous event */
+Subtitles.h (libavformat): * @param merge set to 1 if the current event should be concatenated with the
+Subtitles.h (libavformat):                                    const uint8_t *event, size_t len, int merge);
+Supenc.c (libavformat):      mkvmerge stores multiple segments in one frame.
+Swscale_altivec.c (libswscale\ppc):        vf1 = vec_mergeh(i1, i2);\
+Swscale_altivec.c (libswscale\ppc):        vf2 = vec_mergel(i1, i2);\
+Swscale_altivec.c (libswscale\ppc):        vf = vec_mergel(vf, (vector signed short)vzero);\
+Swscale_altivec.c (libswscale\ppc):        vf = vec_mergeh(vf, (vector signed short)vzero);\
+Swscale_altivec.c (libswscale\ppc):    vf = vec_mergeh(vf, (vector signed short)vzero);\
+Swscale_altivec.c (libswscale\ppc):                        (vector signed short)(VEC_MERGEH((vector unsigned char)vzero, src_vF));
+Swscale_altivec.c (libswscale\ppc):                src_v = vec_mergeh(src_v, (vector signed short)vzero);
+Swscale_altivec.c (libswscale\ppc):                        (vector signed short)(VEC_MERGEH((vector unsigned char)vzero, src_vF));
+Swscale_altivec.c (libswscale\ppc):                                             (vector signed short)(VEC_MERGEH((vector unsigned char)vzero, src_vF));
+Swscale_altivec.c (libswscale\ppc):                                             (vector signed short)(VEC_MERGEL((vector unsigned char)vzero, src_vF));
+Swscale_altivec.c (libswscale\ppc):                                                 (vector signed short)(VEC_MERGEH((vector unsigned char)vzero, src_vF));
+Swscale_altivec.c (libswscale\ppc):                                                 (vector signed short)(VEC_MERGEL((vector unsigned char)vzero, src_vF));
+Swscale_altivec.c (libswscale\ppc):                            (vector signed short)(VEC_MERGEH((vector unsigned char)vzero, src_vF));
+Texturedsp.c (libavcodec): * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Texturedspenc.c (libavcodec): * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Tinterlace.h (libavfilter):    MODE_MERGE = 0,
+Tinterlace.h (libavfilter):    MODE_MERGEX2,
+Transcoding.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Truespeech.c (libavcodec):static void truespeech_filters_merge(TSContext *dec)
+Truespeech.c (libavcodec):        truespeech_filters_merge(c);
+Util_altivec.h (libavutil\ppc):    A1 = vec_mergeh (a, e); \
+Util_altivec.h (libavutil\ppc):    B1 = vec_mergel (a, e); \
+Util_altivec.h (libavutil\ppc):    C1 = vec_mergeh (b, f); \
+Util_altivec.h (libavutil\ppc):    D1 = vec_mergel (b, f); \
+Util_altivec.h (libavutil\ppc):    E1 = vec_mergeh (c, g); \
+Util_altivec.h (libavutil\ppc):    F1 = vec_mergel (c, g); \
+Util_altivec.h (libavutil\ppc):    G1 = vec_mergeh (d, h); \
+Util_altivec.h (libavutil\ppc):    H1 = vec_mergel (d, h); \
+Util_altivec.h (libavutil\ppc):    A2 = vec_mergeh (A1, E1); \
+Util_altivec.h (libavutil\ppc):    B2 = vec_mergel (A1, E1); \
+Util_altivec.h (libavutil\ppc):    C2 = vec_mergeh (B1, F1); \
+Util_altivec.h (libavutil\ppc):    D2 = vec_mergel (B1, F1); \
+Util_altivec.h (libavutil\ppc):    E2 = vec_mergeh (C1, G1); \
+Util_altivec.h (libavutil\ppc):    F2 = vec_mergel (C1, G1); \
+Util_altivec.h (libavutil\ppc):    G2 = vec_mergeh (D1, H1); \
+Util_altivec.h (libavutil\ppc):    H2 = vec_mergel (D1, H1); \
+Util_altivec.h (libavutil\ppc):    a = vec_mergeh (A2, E2); \
+Util_altivec.h (libavutil\ppc):    b = vec_mergel (A2, E2); \
+Util_altivec.h (libavutil\ppc):    c = vec_mergeh (B2, F2); \
+Util_altivec.h (libavutil\ppc):    d = vec_mergel (B2, F2); \
+Util_altivec.h (libavutil\ppc):    e = vec_mergeh (C2, G2); \
+Util_altivec.h (libavutil\ppc):    f = vec_mergel (C2, G2); \
+Util_altivec.h (libavutil\ppc):    g = vec_mergeh (D2, H2); \
+Util_altivec.h (libavutil\ppc):    h = vec_mergel (D2, H2); \
+Util_altivec.h (libavutil\ppc):#define VEC_MERGEH(a, b) vec_mergeh(a, b)
+Util_altivec.h (libavutil\ppc):#define VEC_MERGEL(a, b) vec_mergel(a, b)
+Util_altivec.h (libavutil\ppc):#define VEC_MERGEH(a, b) vec_mergeh(b, a)
+Util_altivec.h (libavutil\ppc):#define VEC_MERGEL(a, b) vec_mergel(b, a)
+Util_altivec.h (libavutil\ppc):    ((vec_s16)vec_mergeh((vec_u8)vec_splat_u8(0),           \
+Util_altivec.h (libavutil\ppc):    ((vec_s16)vec_mergeh((vec_u8)vec_vsx_ld((off), (p)),    \
+Vaapi_encode.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vaapi_encode_h265.c (libavcodec):        .log2_parallel_merge_level_minus2 = pps->log2_parallel_merge_level_minus2,
+Vaapi_encode_h265.c (libavcodec):        .max_num_merge_cand = 5 - sh->five_minus_max_num_merge_cand,
+Vaapi_h264.c (libavcodec): * merges the second field picture attributes with the first, if
+Vaapi_h264.c (libavcodec):                /* Merge second field */
+Vaapi_hevc.c (libavcodec):        .log2_parallel_merge_level_minus2             = pps->log2_parallel_merge_level - 2,
+Vaapi_hevc.c (libavcodec):        .five_minus_max_num_merge_cand = sh->slice_type == HEVC_SLICE_I ? 0 : 5 - sh->max_num_merge_cand,
+Vaapi_transcode.c (doc\examples): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vc1dsp_altivec.c (libavcodec\ppc):    perm0 = vec_mergeh (p, p0);
+Vc1dsp_altivec.c (libavcodec\ppc):    perm1 = vec_mergeh (p, p1);
+Vc1dsp_altivec.c (libavcodec\ppc):    tmp2 = (vector signed short)vec_mergeh (tmp, vec_splat_u8(0));
+Vc1dsp_init.c (libavcodec\x86): * copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vc1dsp_mmx.c (libavcodec\x86): * copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vdpau_hevc.c (libavcodec):    info->log2_parallel_merge_level_minus2 = pps->log2_parallel_merge_level - 2;
+Version.h (libavcodec):#ifndef FF_API_MERGE_SD_API
+Version.h (libavcodec):#define FF_API_MERGE_SD_API      (LIBAVCODEC_VERSION_MAJOR < 59)
+Vf_alphamerge.c (libavfilter):typedef struct AlphaMergeContext {
+Vf_alphamerge.c (libavfilter):} AlphaMergeContext;
+Vf_alphamerge.c (libavfilter):    AlphaMergeContext *merge = ctx->priv;
+Vf_alphamerge.c (libavfilter):    ff_bufqueue_discard_all(&merge->queue_main);
+Vf_alphamerge.c (libavfilter):    ff_bufqueue_discard_all(&merge->queue_alpha);
+Vf_alphamerge.c (libavfilter):    AlphaMergeContext *merge = inlink->dst->priv;
+Vf_alphamerge.c (libavfilter):    merge->is_packed_rgb =
+Vf_alphamerge.c (libavfilter):        ff_fill_rgba_map(merge->rgba_map, inlink->format) >= 0 &&
+Vf_alphamerge.c (libavfilter):    AlphaMergeContext *merge = ctx->priv;
+Vf_alphamerge.c (libavfilter):    if (merge->is_packed_rgb) {
+Vf_alphamerge.c (libavfilter):            pout = main_buf->data[0] + y * main_buf->linesize[0] + merge->rgba_map[A];
+Vf_alphamerge.c (libavfilter):    AlphaMergeContext *merge = ctx->priv;
+Vf_alphamerge.c (libavfilter):        (is_alpha ? &merge->queue_alpha : &merge->queue_main);
+Vf_alphamerge.c (libavfilter):        if (!ff_bufqueue_peek(&merge->queue_main, 0) ||
+Vf_alphamerge.c (libavfilter):            !ff_bufqueue_peek(&merge->queue_alpha, 0)) break;
+Vf_alphamerge.c (libavfilter):        main_buf = ff_bufqueue_get(&merge->queue_main);
+Vf_alphamerge.c (libavfilter):        alpha_buf = ff_bufqueue_get(&merge->queue_alpha);
+Vf_alphamerge.c (libavfilter):    AlphaMergeContext *merge = ctx->priv;
+Vf_alphamerge.c (libavfilter):    in = ff_bufqueue_peek(&merge->queue_main, 0) ? 1 : 0;
+Vf_alphamerge.c (libavfilter):static const AVFilterPad alphamerge_inputs[] = {
+Vf_alphamerge.c (libavfilter):static const AVFilterPad alphamerge_outputs[] = {
+Vf_alphamerge.c (libavfilter):AVFilter ff_vf_alphamerge = {
+Vf_alphamerge.c (libavfilter):    .name           = "alphamerge",
+Vf_alphamerge.c (libavfilter):    .priv_size      = sizeof(AlphaMergeContext),
+Vf_alphamerge.c (libavfilter):    .inputs         = alphamerge_inputs,
+Vf_alphamerge.c (libavfilter):    .outputs        = alphamerge_outputs,
+Vf_avgblur.c (libavfilter): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vf_blend.asm (libavfilter\x86):%macro GRAINMERGE 3-4
+Vf_blend.asm (libavfilter\x86):GRAINMERGE    grainmerge, b, w
+Vf_blend.asm (libavfilter\x86):GRAINMERGE   grainmerge_16, w, d, 1
+Vf_blend.asm (libavfilter\x86):GRAINMERGE grainmerge, b, w
+Vf_blend.asm (libavfilter\x86):GRAINMERGE   grainmerge_16, w, d, 1
+Vf_blend.c (libavfilter):    { "addition128","", 0, AV_OPT_TYPE_CONST, {.i64=BLEND_GRAINMERGE}, 0, 0, FLAGS, "mode" },\
+Vf_blend.c (libavfilter):    { "grainmerge", "", 0, AV_OPT_TYPE_CONST, {.i64=BLEND_GRAINMERGE}, 0, 0, FLAGS, "mode" },\
+Vf_blend.c (libavfilter):DEFINE_BLEND8(grainmerge, av_clip_uint8(A + B - 128))
+Vf_blend.c (libavfilter):DEFINE_BLEND16(grainmerge, av_clip_uint16(A + B - 32768))
+Vf_blend.c (libavfilter):    case BLEND_GRAINMERGE: param->blend = is_16bit ? blend_grainmerge_16bit : blend_grainmerge_8bit; break;
+Vf_blend.c (tests\checkasm):    check_and_report(grainmerge, BLEND_GRAINMERGE, 1)
+Vf_blend.c (tests\checkasm):    check_and_report(grainmerge_16, BLEND_GRAINMERGE, 2)
+Vf_blend_init.c (libavfilter\x86):BLEND_FUNC(grainmerge, sse2)
+Vf_blend_init.c (libavfilter\x86):BLEND_FUNC(grainmerge, avx2)
+Vf_blend_init.c (libavfilter\x86):BLEND_FUNC(grainmerge_16, sse4)
+Vf_blend_init.c (libavfilter\x86):BLEND_FUNC(grainmerge_16, avx2)
+Vf_blend_init.c (libavfilter\x86):            case BLEND_GRAINMERGE:   param->blend = ff_blend_grainmerge_sse2;   break;
+Vf_blend_init.c (libavfilter\x86):            case BLEND_GRAINMERGE:   param->blend = ff_blend_grainmerge_avx2;   break;
+Vf_blend_init.c (libavfilter\x86):            case BLEND_GRAINMERGE: param->blend = ff_blend_grainmerge_16_sse4; break;
+Vf_blend_init.c (libavfilter\x86):            case BLEND_GRAINMERGE: param->blend = ff_blend_grainmerge_16_avx2;   break;
+Vf_bm3d.c (libavfilter): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vf_deband.c (libavfilter): * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+Vf_maskedmerge.asm (libavfilter\x86):;* x86-optimized functions for maskedmerge filter
+Vf_maskedmerge.asm (libavfilter\x86):cglobal maskedmerge8, 8, 11, 7, bsrc, osrc, msrc, dst, blinesize, olinesize, mlinesize, dlinesize, w, h, x
+Vf_maskedmerge.asm (libavfilter\x86):cglobal maskedmerge8, 5, 7, 7, bsrc, osrc, msrc, dst, blinesize, w, x
+Vf_maskedmerge.c (libavfilter):#include "maskedmerge.h"
+Vf_maskedmerge.c (libavfilter):#define OFFSET(x) offsetof(MaskedMergeContext, x)
+Vf_maskedmerge.c (libavfilter):static const AVOption maskedmerge_options[] = {
+Vf_maskedmerge.c (libavfilter):AVFILTER_DEFINE_CLASS(maskedmerge);
+Vf_maskedmerge.c (libavfilter):    MaskedMergeContext *s = ctx->priv;
+Vf_maskedmerge.c (libavfilter):        s->maskedmerge(base->data[p] + slice_start * base->linesize[p],
+Vf_maskedmerge.c (libavfilter):    MaskedMergeContext *s = fs->opaque;
+Vf_maskedmerge.c (libavfilter):static void maskedmerge8(const uint8_t *bsrc, const uint8_t *osrc,
+Vf_maskedmerge.c (libavfilter):static void maskedmerge16(const uint8_t *bbsrc, const uint8_t *oosrc,
+Vf_maskedmerge.c (libavfilter):    MaskedMergeContext *s = ctx->priv;
+Vf_maskedmerge.c (libavfilter):        s->maskedmerge = maskedmerge8;
+Vf_maskedmerge.c (libavfilter):        s->maskedmerge = maskedmerge16;
+Vf_maskedmerge.c (libavfilter):        ff_maskedmerge_init_x86(s);
+Vf_maskedmerge.c (libavfilter):    MaskedMergeContext *s = ctx->priv;
+Vf_maskedmerge.c (libavfilter):    MaskedMergeContext *s = ctx->priv;
+Vf_maskedmerge.c (libavfilter):    MaskedMergeContext *s = ctx->priv;
+Vf_maskedmerge.c (libavfilter):static const AVFilterPad maskedmerge_inputs[] = {
+Vf_maskedmerge.c (libavfilter):static const AVFilterPad maskedmerge_outputs[] = {
+Vf_maskedmerge.c (libavfilter):AVFilter ff_vf_maskedmerge = {
+Vf_maskedmerge.c (libavfilter):    .name          = "maskedmerge",
+Vf_maskedmerge.c (libavfilter):    .description   = NULL_IF_CONFIG_SMALL("Merge first stream with second stream using third stream as mask."),
+Vf_maskedmerge.c (libavfilter):    .priv_size     = sizeof(MaskedMergeContext),
+Vf_maskedmerge.c (libavfilter):    .inputs        = maskedmerge_inputs,
+Vf_maskedmerge.c (libavfilter):    .outputs       = maskedmerge_outputs,
+Vf_maskedmerge.c (libavfilter):    .priv_class    = &maskedmerge_class,
+Vf_maskedmerge_init.c (libavfilter\x86):#include "libavfilter/maskedmerge.h"
+Vf_maskedmerge_init.c (libavfilter\x86):void ff_maskedmerge8_sse2(const uint8_t *bsrc, const uint8_t *osrc,
+Vf_maskedmerge_init.c (libavfilter\x86):av_cold void ff_maskedmerge_init_x86(MaskedMergeContext *s)
+Vf_maskedmerge_init.c (libavfilter\x86):        s->maskedmerge = ff_maskedmerge8_sse2;
+Vf_mergeplanes.c (libavfilter):typedef struct MergePlanesContext {
+Vf_mergeplanes.c (libavfilter):} MergePlanesContext;
+Vf_mergeplanes.c (libavfilter):#define OFFSET(x) offsetof(MergePlanesContext, x)
+Vf_mergeplanes.c (libavfilter):static const AVOption mergeplanes_options[] = {
+Vf_mergeplanes.c (libavfilter):AVFILTER_DEFINE_CLASS(mergeplanes);
+Vf_mergeplanes.c (libavfilter):    MergePlanesContext *s = ctx->priv;
+Vf_mergeplanes.c (libavfilter):    MergePlanesContext *s = ctx->priv;
+Vf_mergeplanes.c (libavfilter):    MergePlanesContext *s = fs->opaque;
+Vf_mergeplanes.c (libavfilter):    MergePlanesContext *s = ctx->priv;
+Vf_mergeplanes.c (libavfilter):    MergePlanesContext *s = ctx->priv;
+Vf_mergeplanes.c (libavfilter):    MergePlanesContext *s = ctx->priv;
+Vf_mergeplanes.c (libavfilter):static const AVFilterPad mergeplanes_outputs[] = {
+Vf_mergeplanes.c (libavfilter):AVFilter ff_vf_mergeplanes = {
+Vf_mergeplanes.c (libavfilter):    .name          = "mergeplanes",
+Vf_mergeplanes.c (libavfilter):    .description   = NULL_IF_CONFIG_SMALL("Merge planes."),
+Vf_mergeplanes.c (libavfilter):    .priv_size     = sizeof(MergePlanesContext),
+Vf_mergeplanes.c (libavfilter):    .priv_class    = &mergeplanes_class,
+Vf_mergeplanes.c (libavfilter):    .outputs       = mergeplanes_outputs,
+Vf_scale_cuda.c (libavfilter):* the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Vf_thumbnail_cuda.c (libavfilter):* the rights to use, copy, modify, merge, publish, distribute, sublicense,
+Vf_tinterlace.c (libavfilter):    {"mode",              "select interlace mode", OFFSET(mode), AV_OPT_TYPE_INT, {.i64=MODE_MERGE}, 0, MODE_NB-1, FLAGS, "mode"},
+Vf_tinterlace.c (libavfilter):    {"merge",             "merge fields",                                 0, AV_OPT_TYPE_CONST, {.i64=MODE_MERGE},             INT_MIN, INT_MAX, FLAGS, "mode"},
+Vf_tinterlace.c (libavfilter):    {"mergex2",           "merge fields keeping same frame rate",         0, AV_OPT_TYPE_CONST, {.i64=MODE_MERGEX2},           INT_MIN, INT_MAX, FLAGS, "mode"},
+Vf_tinterlace.c (libavfilter):    outlink->h = tinterlace->mode == MODE_MERGE || tinterlace->mode == MODE_PAD || tinterlace->mode == MODE_MERGEX2?
+Vf_tinterlace.c (libavfilter):    if (tinterlace->mode == MODE_MERGE || tinterlace->mode == MODE_PAD || tinterlace->mode == MODE_MERGEX2)
+Vf_tinterlace.c (libavfilter):    } else if (tinterlace->mode == MODE_MERGEX2) {
+Vf_tinterlace.c (libavfilter):    case MODE_MERGEX2: /* move the odd frame into the upper field of the new image, even into
+Vf_tinterlace.c (libavfilter):    case MODE_MERGE: /* move the odd frame into the upper field of the new image, even into
+Vf_tinterlace.c (libavfilter):                           FIELD_UPPER_AND_LOWER, 1, tinterlace->mode == MODE_MERGEX2 ? inlink->frame_count_out & 1 ? FIELD_LOWER : FIELD_UPPER : FIELD_UPPER, tinterlace->flags);
+Vf_tinterlace.c (libavfilter):                           FIELD_UPPER_AND_LOWER, 1, tinterlace->mode == MODE_MERGEX2 ? inlink->frame_count_out & 1 ? FIELD_UPPER : FIELD_LOWER : FIELD_LOWER, tinterlace->flags);
+Vf_tinterlace.c (libavfilter):        if (tinterlace->mode != MODE_MERGEX2)
+Vp3dsp_altivec.c (libavcodec\ppc):    vec_u8 vdst_mask = vec_mergeh(vec_splat_u8(-1), vec_lvsl(0, dst));
+Vp3dsp_altivec.c (libavcodec\ppc):    vdst_16 = (vec_s16)vec_mergeh(vdst, zero_u8v);
+Vp8.c (libavcodec):        /* If we have three distinct MVs, merge first and last if they're the same */
+Vp8dsp.asm (libavcodec\x86):    ; merge two sets of 2 pixels into one set of 4, round/clip/store
+Vp8dsp.asm (libavcodec\x86):    packssdw  mm3, mm0                     ; merge dword->word (4px)
+Vp8dsp.asm (libavcodec\x86):    ; merge two sets of 2 pixels into one set of 4, round/clip/store
+Vp8dsp.asm (libavcodec\x86):    packssdw  mm1, mm0                     ; merge dword->word (4px)
+Vp8dsp_altivec.c (libavcodec\ppc):#define LOAD_HL(off, s, perm) vec_mergeh(vec_vsx_ld(off,s), vec_vsx_ld(off+8,s))
+Vp8dsp_altivec.c (libavcodec\ppc):        perm_vec = vec_mergeh(align_vech, align_vecl);
+Vp8dsp_altivec.c (libavcodec\ppc):        perm_vec = vec_mergeh(align_vech, align_vech);
+Vp9block.c (libavcodec):// FIXME merge cnt/eob arguments?
+Vp9block.c (libavcodec):#define MERGE(la, end, step, rd) \
+Vp9block.c (libavcodec):#define MERGE_CTX(step, rd) \
+Vp9block.c (libavcodec):        MERGE(l, end_y, step, rd); \
+Vp9block.c (libavcodec):        MERGE(a, end_x, step, rd); \
+Vp9block.c (libavcodec):        MERGE_CTX(2, AV_RN16A);
+Vp9block.c (libavcodec):        MERGE_CTX(4, AV_RN32A);
+Vp9block.c (libavcodec):        MERGE_CTX(8, AV_RN64A);
+Vp9block.c (libavcodec):            MERGE_CTX(2, AV_RN16A);
+Vp9block.c (libavcodec):            MERGE_CTX(4, AV_RN32A);
+Vp9block.c (libavcodec):            MERGE_CTX(8, AV_RN64A);
+Vp9dec.h (libavcodec):    // FIXME maybe merge some of the below in a flags field?
+Vp9dsp_template.c (libavcodec):// FIXME see whether we can merge parts of this (perhaps at least 4x4 and 8x8)
+Vp9itxfm.asm (libavcodec\x86):    ; merged VP9_IDCT8_1D_FINALIZE to make register-sharing w/ avx easier
+Vp9_superframe_bsf.c (libavcodec): * Vp9 invisible (alt-ref) frame to superframe merge bitstream filter
+Vp9_superframe_bsf.c (libavcodec):static int merge_superframe(AVPacket * const *in, int n_in, AVPacket *out)
+Vp9_superframe_bsf.c (libavcodec):    if ((res = merge_superframe(s->cache, s->n_cache, out)) < 0)
+Wmavoice.c (libavcodec):    /* merge filter output with the history of previous runs */
+X86inc.asm (libavutil\x86):; Merge mmx, sse*, and avx*
+Yuv2rgb_altivec.c (libswscale\ppc): *    o0 = vec_mergeh(x0, x1);
+Yuv2rgb_altivec.c (libswscale\ppc): *    o3 = vec_mergel(x0, x1);
+Yuv2rgb_altivec.c (libswscale\ppc):#define vec_merge3(x2, x1, x0, y0, y1, y2)     \
+Yuv2rgb_altivec.c (libswscale\ppc):        o0 = vec_mergeh(x0, x1);               \
+Yuv2rgb_altivec.c (libswscale\ppc):        o3 = vec_mergel(x0, x1);               \
+Yuv2rgb_altivec.c (libswscale\ppc):        vec_merge3(x0, x1, x2, _0, _1, _2);    \
+Yuv2rgb_altivec.c (libswscale\ppc):        vec_merge3(x2, x1, x0, _0, _1, _2);    \
+Yuv2rgb_altivec.c (libswscale\ppc):        _0 = vec_mergeh(x0, x1);                                        \
+Yuv2rgb_altivec.c (libswscale\ppc):        _1 = vec_mergeh(x2, x3);                                        \
+Yuv2rgb_altivec.c (libswscale\ppc):        _2 = (T) vec_mergeh((vector unsigned short) _0,                 \
+Yuv2rgb_altivec.c (libswscale\ppc):        _3 = (T) vec_mergel((vector unsigned short) _0,                 \
+Yuv2rgb_altivec.c (libswscale\ppc):        _0 = vec_mergel(x0, x1);                                        \
+Yuv2rgb_altivec.c (libswscale\ppc):        _1 = vec_mergel(x2, x3);                                        \
+Yuv2rgb_altivec.c (libswscale\ppc):        _2 = (T) vec_mergeh((vector unsigned short) _0,                 \
+Yuv2rgb_altivec.c (libswscale\ppc):        _3 = (T) vec_mergel((vector unsigned short) _0,                 \
+Yuv2rgb_altivec.c (libswscale\ppc):#define vec_unh(x)(vector signed short) vec_mergeh(x,(__typeof__(x)) { 0 })
+Yuv2rgb_altivec.c (libswscale\ppc):#define vec_unl(x)(vector signed short) vec_mergel(x,(__typeof__(x)) { 0 })
+Yuv2rgb_altivec.c (libswscale\ppc):            ux0 = vec_mergeh(ux, ux);                                         \
+Yuv2rgb_altivec.c (libswscale\ppc):            ux1 = vec_mergel(ux, ux);                                         \
+Yuv2rgb_altivec.c (libswscale\ppc):            vx0 = vec_mergeh(vx, vx);                                         \
+Yuv2rgb_altivec.c (libswscale\ppc):            vx1 = vec_mergel(vx, vx);                                         \
+Yuv2rgb_altivec.c (libswscale\ppc):            uvx0 = vec_mergeh(uvx, uvx);                                      \
+Yuv2rgb_altivec.c (libswscale\ppc):            uvx1 = vec_mergel(uvx, uvx);                                      \
+Yuv2rgb_altivec.c (libswscale\ppc):        U0 = vec_mergeh(U, U);
+Yuv2rgb_altivec.c (libswscale\ppc):        V0 = vec_mergeh(V, V);
+Yuv2rgb_altivec.c (libswscale\ppc):        U1 = vec_mergel(U, U);
+Yuv2rgb_altivec.c (libswscale\ppc):        V1 = vec_mergel(V, V);
+Yuv2rgb_altivec.c (libswscale\ppc):        U0 = vec_mergeh(U, U);
+Yuv2rgb_altivec.c (libswscale\ppc):        V0 = vec_mergeh(V, V);
+Yuv2rgb_altivec.c (libswscale\ppc):        U1 = vec_mergel(U, U);
+Yuv2rgb_altivec.c (libswscale\ppc):        V1 = vec_mergel(V, V);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uv_a   = vec_mergeh(v_u, v_v);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uv_b   = vec_mergel(v_u, v_v);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_yuy2_0 = vec_mergeh(v_y1, v_uv_a);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_yuy2_1 = vec_mergel(v_y1, v_uv_a);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_yuy2_2 = vec_mergeh(v_y2, v_uv_b);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_yuy2_3 = vec_mergel(v_y2, v_uv_b);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uv_a   = vec_mergeh(v_u, v_v);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_yuy2_0 = vec_mergeh(v_y1, v_uv_a);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_yuy2_1 = vec_mergel(v_y1, v_uv_a);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uv_a   = vec_mergeh(v_u, v_v);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uv_b   = vec_mergel(v_u, v_v);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uyvy_0 = vec_mergeh(v_uv_a, v_y1);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uyvy_1 = vec_mergel(v_uv_a, v_y1);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uyvy_2 = vec_mergeh(v_uv_b, v_y2);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uyvy_3 = vec_mergel(v_uv_b, v_y2);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uv_a   = vec_mergeh(v_u, v_v);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uyvy_0 = vec_mergeh(v_uv_a, v_y1);
+Yuv2yuv_altivec.c (libswscale\ppc):            vector unsigned char v_uyvy_1 = vec_mergel(v_uv_a, v_y1);
